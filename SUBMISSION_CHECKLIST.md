@@ -2,6 +2,8 @@
 
 Cập nhật 22/10/2026 (Asia/Saigon). Phần Figma ngoài phạm vi sửa theo yêu cầu. Ô đã đánh dấu chỉ xác nhận tài liệu/tài sản đã có, không chứng nhận rubric đã đạt. Hiện trạng ở [README](README.md) và [bảng ngoài Figma](NON_FIGMA_STATUS.md).
 
+Xác nhận mới nhất: [C01–C03](ai/student-confirmations.md). Checklist prototype, 360/412, accessibility và component/token được sinh viên tự xác nhận ổn (**Reported**). Đã khôi phục prompt nguyên văn ba vòng chính cùng hai lượt sửa V2; không còn thiếu prompt. Các dòng còn ghi chưa kiểm thử bởi Codex không có nghĩa sinh viên chưa thực hiện.
+
 ## 1. Tài liệu và file đã có
 
 - [x] [Primary Proto-Persona P01](ux/persona.md) đủ 12 trường, tên/tuổi minh họa, problem statement và mục tiêu kiểm thử; nhãn Assumed.
@@ -13,7 +15,7 @@ Cập nhật 22/10/2026 (Asia/Saigon). Phần Figma ngoài phạm vi sửa theo 
 - [x] [D01–D09](design/design-decisions.md) đã chọn trong đặc tả hiện hành theo nhiệm vụ 22/10; không giả phê duyệt hoặc bằng chứng sửa UI; D10 ghi phạm vi công cụ.
 - [x] [Chỉ mục S01–S10](design/screen-evidence.md) và [đối chiếu/state matrix](design/state-coverage.md) chỉ dùng ảnh sinh viên đã gửi.
 - [ ] Low-fi riêng do sinh viên cung cấp, nếu cần chứng minh theo rubric; không gọi ảnh high-fi cũ là low-fi và không tự tạo màn mới.
-- [ ] Thư viện component/token dùng chung và kiểm tra 360/412 trên UI cuối chưa có bằng chứng. Đã rút mẫu Codex tạo khỏi bộ nộp.
+- [x] Component/token dùng chung, 360/412 và accessibility được sinh viên xác nhận ổn tại C01/C02; không nhận là kiểm tra trực tiếp của Codex. Đã rút mẫu Codex tạo khỏi bộ nộp.
 - [x] [Validation plan](design/validation-plan.md), mẫu ghi kết quả UI/task/retest và [iteration evidence](ai/iteration-evidence.md) chỉ rõ log còn thiếu.
 - [x] [AI log và chỉ mục](ai/README.md); V0/V1/V2 giữ riêng, không sửa lịch sử để khớp hiện trạng.
 - [x] [Handoff](handoff/flutter-handoff.md): sáu mục/màn, token → Flutter và component → widget.
@@ -26,17 +28,18 @@ Cập nhật 22/10/2026 (Asia/Saigon). Phần Figma ngoài phạm vi sửa theo 
 
 - [ ] Kiểm chứng các giả định P01 với người phù hợp hoặc giữ nhãn Assumed và ghi giới hạn thực tế; không nhận là người đã phỏng vấn.
 - [ ] Áp dụng D01–D09 vào Stitch; sinh viên xem lại lựa chọn, ghi ảnh sau sửa và kết quả kiểm thử, không giả chữ ký reviewer.
-- [ ] Lưu đúng prompt/phản hồi các lượt muộn, bộ V3 riêng và ảnh trước/sau; chưa chứng minh đủ ba vòng cải tiến.
+- [x] [Lưu prompt nguyên văn V1/V2/V2.1/V2.2/V3 và đối chiếu ba mục tiêu](ai/evidence/recovered-prompts-2026-10-22/README.md); sinh viên xác nhận sử dụng nguyên văn.
+- [ ] Khôi phục bộ PNG V3 gốc vào repo; ảnh đã gửi trong hội thoại nhưng tệp clipboard tạm đã mất. Không tạo ảnh thay thế hoặc yêu cầu làm lại vòng V3.
 - [ ] Đối chiếu UI cuối với đặc tả và bằng chứng đã có; low-fi riêng vẫn ghi thiếu nếu chưa được cung cấp.
 - [ ] Bổ sung ảnh S10 mới và bằng chứng sau Save/Cancel, sau chốt, lý do trống/audit mới, loading/error/recovery.
 - [ ] Xác nhận JSON xuất phù hợp schema extension; nhãn trong prototype chưa chứng minh tích hợp được.
 - [ ] Xác nhận dữ liệu tên/MSSV/email là giả hoặc ẩn danh trước khi công khai.
 
-## 3. Kiểm thử và trình bày chưa thực hiện
+## 3. Kiểm thử và trình bày — phân biệt Reported và log trực tiếp
 
-- [ ] Sửa hoặc giải thích R01–R12, chạy ba flow theo checklist, ghi kết quả thực tế và ảnh/video.
-- [ ] Thử Hủy không đổi dữ liệu; sửa P/A thật và cập nhật tổng; tên file preview/result/share khớp; bỏ Drive không báo synced.
-- [ ] Kiểm tra 360/412, bàn phím, tên/path dài, vùng chạm, chữ và contrast thực tế. Kết quả contrast token không thay thế kiểm tra UI.
+- [x] Checklist prototype được sinh viên xác nhận ổn tại C01 (Reported); Codex chưa kiểm tra lại hoặc nhận video/log riêng từng case.
+- [x] Các nhánh Hủy/Lưu/Back và xuất thuộc checklist được sinh viên xác nhận chung; không tự điền số đo hoặc diễn biến từng lần chạy khi chưa có log.
+- [x] 360/412 và accessibility được sinh viên xác nhận ổn tại C01; không dùng phép tính token thay cho số đo, không tự tạo số đo từ xác nhận chung.
 - [ ] Nhờ một người thử handoff; ghi người nhận, ngày, câu hỏi và sửa tài liệu sau thử.
 - [ ] Tập 10 phút slide + 5 phút demo theo thời lượng được giảng viên xác nhận; quay video dự phòng.
 

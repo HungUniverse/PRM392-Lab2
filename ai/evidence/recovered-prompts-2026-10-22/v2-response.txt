@@ -1,0 +1,341 @@
+Dán prompt dưới đây vào **project Stitch đang có V1**, kèm ảnh S04, S05, S07, S08 V1. Có thể đính kèm S07 V0 để đối chiếu phần note đã từng hiển thị.
+
+:::writing{variant="standard" id="74216"}
+Bạn là chuyên gia thiết kế UI/UX mobile.
+
+Hãy cải tiến phiên bản V1 của ứng dụng FAP Attendance dành cho giảng viên Trường Đại học FPT thành V2.
+
+Đây là một vòng cải tiến có mục tiêu cụ thể, không phải thiết kế lại toàn bộ ứng dụng.
+
+## 1. Mục tiêu V2
+
+Giảng viên phải:
+- Xác định đúng lớp, ngày và slot điểm danh.
+- Xem lịch sử sinh viên không bị trùng hoặc sai số lượng.
+- Tìm và đọc được ghi chú chỉnh sửa, kể cả sau ngày học.
+- Sửa kết quả với lý do bắt buộc, có Lưu/Hủy và phản hồi rõ ràng.
+- Không hiểu nhầm quyền chỉnh sửa lịch của lớp.
+
+Tập trung sửa S04, S05, S07, S08 và các state/overlay liên quan.
+
+Giữ phong cách trắng–cam và bố cục tốt của V1. Không thay toàn bộ navigation, typography hoặc hệ thống component khi không cần thiết.
+
+## 2. Đầu vào và giới hạn
+
+Đọc các ảnh V1 và tài liệu persona.md, DESIGN.md, user-flow.md nếu được đính kèm.
+
+Người dùng mục tiêu là giảng viên Trường Đại học FPT:
+- Quản lý nhiều lớp.
+- Cần thao tác nhanh trên điện thoại chiều dọc.
+- Cần kiểm tra đúng sinh viên, lớp, ngày và slot.
+- Có thể gặp mạng không ổn định.
+- Cần sửa sai có lý do và truy vết kết quả.
+
+Không tự đặt tên, tuổi hoặc tạo kết quả phỏng vấn cho persona.
+
+Bộ V1 hiện thiếu S06. Trong vòng này không tự nhận S06 đã hoàn thiện và không lấy ảnh S06 V0 làm bằng chứng V1/V2.
+
+Không thiết kế thêm ứng dụng sinh viên, Chrome Extension hoặc website FAP trong vòng này.
+
+Nếu phát hiện tài liệu mâu thuẫn với nhau về quyền sửa điểm danh hoặc mở lại QR, hãy nêu rõ; không tự thay đổi nghiệp vụ.
+
+## 3. Thuật ngữ bắt buộc
+
+Theo yêu cầu mới của người dùng:
+
+- Đổi “Lần học 5” thành “Slot 5”.
+- Đổi “Lần học 4” thành “Slot 4”.
+- Không dùng “Lần học”, “Buổi” hoặc “Meeting” làm nhãn thứ tự điểm danh trong UI.
+- Đổi nhãn “Meeting” dưới tiến độ thành “Slot”.
+- Dùng “Lịch sử điểm danh” thay cho “Lịch sử buổi học”.
+
+Phân biệt hai khái niệm:
+1. “Slot 5”: lượt học thứ năm trong lịch của môn.
+2. “Khung giờ 2”: khoảng thời gian 09:30–11:45 trong ngày.
+
+Ví dụ card:
+
+Slot 5 · Hôm nay
+Thứ Năm, 24/09/2026
+Khung giờ 2 · 09:30–11:45
+
+Không viết “Slot 5 · Slot 2” cạnh nhau vì dễ gây nhầm.
+
+Các khung giờ:
+- Khung giờ 1: 07:00–09:15.
+- Khung giờ 2: 09:30–11:45.
+- Khung giờ 3: 12:30–14:45.
+- Khung giờ 4: 15:00–17:15.
+
+Mã S01–S10 chỉ xuất hiện trong tên frame và tài liệu, không xuất hiện trên nút hoặc nội dung dành cho giảng viên.
+
+## 4. Thống nhất dữ liệu demo
+
+Ngày giả lập dùng để thiết kế: thứ Năm, 24/09/2026.
+Không dùng ngày hệ thống thực tế để thay mốc demo.
+
+Khai báo rõ đây là dữ liệu demo, không phải dữ liệu cá nhân hoặc kết quả điểm danh thật.
+
+### Bộ dữ liệu A — Xem và sửa điểm danh
+
+Dùng thống nhất cho S04, S07, S08 và các overlay:
+
+- Học kỳ: FA26.
+- Môn: PRN232.
+- Lớp: SE1920.
+- Sĩ số: 30.
+- Ngày bắt đầu: 10/09/2026.
+- Thời lượng: 10 tuần.
+- Tần suất: 2 slot/tuần.
+- Ngày học: thứ Hai và thứ Năm.
+- Khung giờ: 2, từ 09:30–11:45.
+- Tổng lịch: 20 slot.
+
+Năm slot đầu:
+
+| Slot | Ngày | Thứ | Trạng thái |
+|---|---|---|---|
+| Slot 1 | 10/09/2026 | Thứ Năm | Đã chốt |
+| Slot 2 | 14/09/2026 | Thứ Hai | Đã chốt |
+| Slot 3 | 17/09/2026 | Thứ Năm | Đã chốt |
+| Slot 4 | 21/09/2026 | Thứ Hai | Đã chốt, có chỉnh sửa |
+| Slot 5 | 24/09/2026 | Thứ Năm | Đang điểm danh |
+
+Slot 5:
+- 26 P.
+- 0 A.
+- 4 chưa ghi nhận.
+
+Slot 4:
+- 28 P.
+- 2 A.
+- Đủ 30 sinh viên.
+- Có một kết quả đã chỉnh sửa kèm lý do.
+
+Tiến độ đã chốt:
+- 4/20 slot.
+- Không tính slot đang mở là đã chốt.
+- Nếu dùng nhãn “Tiến độ đã chốt”, dùng nhất quán trên các màn.
+
+Sinh viên minh họa ở S07:
+- MSSV: SE180123.
+- Họ tên: Nguyễn Hoàng Bảo Long.
+- Thông tin dùng cho thiết kế là dữ liệu demo.
+- Slot 1: P.
+- Slot 2: P.
+- Slot 3: A.
+- Slot 4: P, được sửa từ A.
+- Slot 5: P trong phiên đang mở.
+
+Thống kê sinh viên:
+- Tổng P: 4.
+- Tổng A: 1.
+- Tổng lịch: 20.
+- Tỷ lệ vắng: 1/20 = 5,0%.
+- Có 5 slot đã ghi nhận kết quả, trong đó 4 slot đã chốt.
+
+Note mẫu tại Slot 4:
+- Lý do: “Bổ sung có mặt sau khi kiểm tra lại.”
+- Trạng thái: A → P.
+- Thời điểm sửa: 21/09/2026, 10:15.
+- Người sửa: Giảng viên (demo).
+
+Không lặp hai dòng cùng một slot như S07 V1.
+
+### Bộ dữ liệu B — Chuẩn bị lớp, được phép sửa lịch
+
+Dùng cho trạng thái chuẩn bị lớp của S04 và S05:
+
+- Môn: PRN232.
+- Lớp: SE1921.
+- Ngày bắt đầu: 28/09/2026.
+- 10 tuần, 2 slot/tuần.
+- Thứ Hai và thứ Năm.
+- Khung giờ 2.
+- Tổng 20 slot.
+- Chưa có slot đang điểm danh hoặc đã chốt.
+- Được phép sửa lịch.
+
+Không dùng trạng thái được sửa này cho lớp SE1920 của bộ A.
+
+Ghi rõ hai bộ dữ liệu trong phần mô tả prototype hoặc ghi chú ngoài frame. Không đưa một đoạn giải thích kỹ thuật dài vào UI giảng viên.
+
+## 5. Yêu cầu sửa từng màn hình
+
+### S04 — Điểm danh lớp
+
+- Giữ môn, lớp, ngày và trạng thái rõ ràng.
+- Dùng “Slot 5/20” và dòng riêng “Khung giờ 2 · 09:30–11:45”.
+- Bộ chọn slot phải đọc được số thứ tự và ngày.
+- Card đang chọn không bị cắt nội dung.
+- Có thể dùng bộ chọn mở bottom sheet thay cho ép nhiều card nhỏ.
+- Nếu card kế tiếp lộ một phần để gợi ý cuộn, card đang chọn vẫn phải đầy đủ.
+- Roster có MSSV, họ tên đầy đủ và trạng thái bằng chữ/ký hiệu.
+- Sinh viên có chỉnh sửa phải có dấu hiệu “Có ghi chú”.
+- Bấm sinh viên mở S07, giữ ngữ cảnh lớp và slot nguồn.
+- Bỏ các nhãn nội bộ như “S07”, “S08”, “S06” khỏi UI.
+- Không đổi kết quả chỉ vì người dùng mở chi tiết.
+
+### S05 — Cấu hình lịch lớp
+
+Thiết kế hai state của cùng màn hình:
+
+1. Được phép sửa:
+- Dùng bộ B, lớp SE1921.
+- Cho chỉnh số tuần, 1 hoặc 2 slot/tuần và ngày học.
+- Nếu chọn 1 slot/tuần, phải chọn đúng một ngày.
+- Có Lưu/Hủy.
+
+2. Bị khóa:
+- Dùng bộ A, lớp SE1920.
+- Thông báo: “Không thể đổi lịch vì lớp đã có slot đang điểm danh hoặc đã chốt.”
+- Chặn lưu thay đổi.
+- Giữ đường quay lại lớp.
+
+Không chỉ viết điều kiện khóa trong đoạn hướng dẫn nhưng vẫn hiển thị form có thể lưu.
+
+Không xóa hoặc sinh lại lịch sử điểm danh khi xem màn hình này.
+
+### S07 — Chi tiết sinh viên
+
+- Hiển thị đủ MSSV, họ tên và ngữ cảnh lớp.
+- Thống kê 4 P, 1 A, 20 slot; tỷ lệ vắng 5,0%.
+- Giải thích ngắn: “Tỷ lệ vắng tính trên toàn bộ 20 slot đã lên lịch.”
+- Hiển thị năm bản ghi khác nhau theo bộ A.
+- Có thể cuộn để xem đủ năm bản ghi; không cần ép tất cả vào một viewport.
+- Nếu chỉ hiển thị một phần, ghi rõ số lượng đang hiển thị và có “Xem tất cả”.
+- Mỗi dòng gồm số slot, ngày, khung giờ, kết quả và trạng thái chốt nếu cần.
+- Không cắt mất ngày/giờ.
+- Slot 4 có icon và nhãn “Có ghi chú”.
+- Hành động xem note phải tách biệt với hành động sửa.
+
+Overlay xem note:
+- Tên sinh viên và MSSV.
+- Lớp, Slot 4, ngày 21/09/2026.
+- Lý do chỉnh sửa.
+- A → P.
+- Người sửa và thời điểm.
+- Nút Đóng.
+- Sau ngày học vẫn mở xem được.
+
+Overlay sửa điểm danh:
+- Hiển thị đúng sinh viên và slot đang sửa.
+- Chọn P hoặc A.
+- Trường “Lý do chỉnh sửa” có label, bắt buộc với kết quả đã chốt.
+- Lưu/Hủy rõ ràng.
+- Lý do trống hoặc toàn khoảng trắng: báo lỗi tại trường, không đóng overlay.
+- Đang lưu: ngăn bấm lặp.
+- Hủy: giữ kết quả cũ.
+- Thành công: cập nhật trạng thái và dấu hiệu note.
+
+Không cho sửa slot tương lai.
+Không tự thay đổi quyền sửa slot quá ngày so với tài liệu nghiệp vụ được cung cấp. Quyền xem note sau ngày học luôn phải được giữ.
+
+### S08 — Lịch sử điểm danh lớp
+
+- Đổi toàn bộ “Lần học” thành “Slot”.
+- Cập nhật ngày/thứ theo bộ A.
+- Dùng “Tiến độ đã chốt 4/20 Slot”.
+- Slot 5 hiển thị Đang điểm danh, 26 P, 0 A, 4 chưa ghi nhận.
+- Slot 5 có “Tiếp tục điểm danh”.
+- Chặn xuất Slot 5, giải thích “Cần chốt danh sách trước khi xuất”.
+- Không đặt đồng hồ hai phút như thời hạn tự chốt cả lớp.
+- Nếu giữ thông tin thời gian kết thúc khung giờ, không diễn đạt như tự đóng phiên.
+
+Slot 4:
+- Đã chốt.
+- 28 P, 2 A.
+- Có dấu hiệu đã chỉnh sửa.
+- “Xem chi tiết” mở danh sách kết quả đúng Slot 4.
+- Từ danh sách đó chọn sinh viên đến S07.
+- Không bỏ qua bước chọn sinh viên rồi tự mở một người bất kỳ.
+
+Có đường quay lại S08 giữ đúng slot/bộ lọc trước đó.
+
+Nếu các màn khác trong project sử dụng cùng lớp SE1920 và tham chiếu Slot 4, chỉ cập nhật metadata cần thiết cho khớp ngày 21/09/2026; không thiết kế lại bố cục ngoài phạm vi.
+
+## 6. State và tương tác cần thể hiện
+
+Tạo các state/overlay bên cạnh màn liên quan, không tính thành màn hình chính mới:
+
+- S05 được sửa.
+- S05 bị khóa.
+- S07 xem note.
+- S07 sửa P/A.
+- S07 lý do trống.
+- S07 đang lưu → thành công.
+- S07 lỗi lưu → thử lại hoặc hủy.
+
+Thể hiện ít nhất hai chuỗi:
+
+A. Xem ghi chú:
+S08 → kết quả Slot 4 → chọn sinh viên → S07 → mở note → đóng note → Back về đúng nơi đã mở.
+
+B. Sửa có lý do:
+S07 → sửa → lý do trống → lỗi tại trường → nhập lý do → lưu → loading → kết quả và note cập nhật.
+
+Có nhánh Hủy giữ nguyên dữ liệu.
+
+Không tuyên bố prototype đã hoạt động nếu công cụ chỉ sinh ảnh.
+
+## 7. Accessibility và phong cách
+
+Giữ trắng–cam làm chủ đạo:
+- Primary: #C93C13.
+- Brand accent: #F4511E.
+- Nền: #FFF7F3.
+- Card: #FFFFFF.
+- Chữ chính: #243047.
+- Chữ phụ: #667085.
+- Xanh lá/đỏ hỗ trợ P/A nhưng luôn kèm chữ hoặc ký hiệu.
+
+Không mặc định các cặp màu đã đạt tương phản.
+
+Mục tiêu:
+- Body ưu tiên 16.
+- Nội dung phụ không dưới 14.
+- Vùng chạm tối thiểu 48 × 48.
+- Chữ thường tương phản tối thiểu 4,5:1.
+- Tên dài và ngày/giờ không bị cắt.
+- Form không bị bàn phím che hành động quan trọng.
+- Kiểm tra chiều rộng 360 và 412.
+- Icon note, sửa, đóng và Back có nhãn truy cập phù hợp.
+
+Nếu không đo hoặc không mô phỏng được, ghi “Cần kiểm tra trong Figma/prototype”, không khẳng định đã đạt.
+
+Không thêm phòng học, ngưỡng vắng 20%, mã hóa tuyệt đối, dữ liệu sinh viên thật hoặc thông tin ngoài nguồn.
+
+## 8. Kết quả cần trả về
+
+1. Các màn V2 được sửa: S04, S05, S07, S08.
+2. Các state/overlay cần thiết đặt cạnh màn liên quan.
+3. Bảng thay đổi:
+   - Vấn đề V1.
+   - Thành phần đã sửa.
+   - Lý do UX/nghiệp vụ.
+   - Phần còn phải kiểm tra.
+4. Mô tả cách nối hai chuỗi tương tác.
+5. Danh sách hạn chế và mâu thuẫn tài liệu nếu có.
+
+Đặt tên frame rõ ràng:
+- V2_S04_Attendance.
+- V2_S04_Preparation.
+- V2_S05_ScheduleEditable.
+- V2_S05_ScheduleLocked.
+- V2_S07_Student.
+- V2_S07_Note.
+- V2_S07_Edit.
+- V2_S07_EditError.
+- V2_S07_Saving.
+- V2_S07_SaveSuccess.
+- V2_S07_SaveError.
+- V2_S08_History.
+- V2_S08_SlotResults.
+
+Giữ nguyên V0/V1 để đối chiếu, không ghi đè.
+
+Không tự ghi quyết định Accept/Modify/Reject thay sinh viên.
+Không tuyên bố đã kiểm thử với người dùng, hoàn tất Figma hoặc hoàn thành ba vòng cải tiến chỉ vì đã tạo ảnh.
+:::
+
+Sau khi Stitch tạo xong, lưu ảnh với tiền tố `v2-` và giữ lại **prompt đã gửi cùng phản hồi Stitch** để có đủ bằng chứng vòng này.

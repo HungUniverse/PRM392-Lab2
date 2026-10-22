@@ -1,0 +1,268 @@
+Hãy sửa bổ sung bộ giao diện V2.1 của FAP Attendance thành V2.2.
+
+Giữ nguyên phong cách trắng–cam, bố cục và các thành phần đã đúng. Không thiết kế lại toàn bộ ứng dụng. Chỉ sửa các lỗi dưới đây và bổ sung trạng thái còn thiếu.
+
+Người dùng: giảng viên Trường Đại học FPT.
+
+Giữ nguyên V2.1 để đối chiếu, tạo frame mới với tiền tố V2.2.
+
+## 1. Chuẩn hóa dữ liệu giữa các màn
+
+Dùng cùng một bộ dữ liệu cho lớp PRN232–SE1920:
+
+- Học kỳ FA26.
+- Sĩ số 30.
+- Tổng lịch 20 slot.
+- Ngày demo: thứ Năm, 24/09/2026.
+- Khung giờ 2: 09:30–11:45.
+- Đã chốt 4 slot; Slot 5 đang điểm danh.
+
+Kết quả lớp:
+
+| Slot | Ngày | P | A | Chưa ghi nhận | Trạng thái |
+|---|---|---:|---:|---:|---|
+| 1 | Thứ Năm, 10/09/2026 | 30 | 0 | 0 | Đã chốt |
+| 2 | Thứ Hai, 14/09/2026 | 29 | 1 | 0 | Đã chốt |
+| 3 | Thứ Năm, 17/09/2026 | 29 | 1 | 0 | Đã chốt |
+| 4 | Thứ Hai, 21/09/2026 | 28 | 2 | 0 | Đã chốt, một kết quả chỉnh sửa |
+| 5 | Thứ Năm, 24/09/2026 | 26 | 0 | 4 | Đang điểm danh |
+
+Bắt buộc sửa Slot 3 ở S08 từ 30 P/0 A thành 29 P/1 A, để khớp S04 và S07.
+
+Thống kê lớp:
+- Đã chốt 4/20 slot.
+- Tổng P trên bốn slot đã chốt: 116.
+- Tổng lượt sinh viên của bốn slot: 120.
+- Tỷ lệ có mặt: 116/120 ≈ 96,7%.
+
+Đổi nhãn chỉ số thành:
+“Tỷ lệ có mặt — 4 slot đã chốt”.
+
+Không dùng 96,6%.
+Không đưa Slot 5 đang mở vào chỉ số này.
+
+## 2. Dữ liệu sinh viên và note
+
+Sinh viên demo:
+- Nguyễn Hoàng Bảo Long.
+- MSSV SE180123.
+- Môn PRN232.
+- Lớp SE1920.
+
+Kết quả:
+- Slot 1: P.
+- Slot 2: P.
+- Slot 3: A.
+- Slot 4: P.
+- Slot 5: P.
+
+Thống kê:
+- 4 P.
+- 1 A.
+- 20 slot lên lịch.
+- Tỷ lệ vắng 1/20 = 5,0%.
+- Đã ghi nhận 5 slot; đã chốt 4 slot.
+
+Note Slot 4:
+- Lý do: “Bổ sung có mặt sau khi kiểm tra lại.”
+- Thay đổi: A → P.
+- Ngày sửa: 21/09/2026.
+- Giờ sửa: 10:15.
+- Người sửa: Giảng viên (demo).
+- Khung giờ của slot: 09:30–11:45.
+
+Mọi màn hình, preview và overlay phải dùng đúng dữ liệu này.
+
+## 3. Sửa nền overlay lỗi lý do trống
+
+Trong ảnh V2.1, nền phía sau dialog sửa đang có “1/15 slot” và “93.3%”, không khớp S07 chính.
+
+Bắt buộc:
+- Dùng chính S07 của SE180123 làm nền.
+- Nền phải là 4 P, 1 A, 20 slot, tỷ lệ vắng 5,0%.
+- Không tạo một hồ sơ hoặc bộ thống kê khác phía sau overlay.
+- Áp dụng cùng nền cho xem note, sửa, lỗi, đang lưu và kết quả lưu.
+- Khi đóng overlay, trở về đúng màn và vị trí trước đó.
+
+Dialog sửa:
+- Hiển thị đầy đủ PRN232 · SE1920.
+- Slot 4 · Thứ Hai, 21/09/2026.
+- Khung giờ 2 · 09:30–11:45.
+- Không cắt ngày bằng dấu ba chấm.
+- Chỉ có P · Có mặt và A · Vắng.
+- Lý do bắt buộc khi sửa kết quả đã chốt.
+- Không cho lưu lý do trống hoặc toàn khoảng trắng.
+- Hủy không thay đổi kết quả hoặc tạo audit.
+
+Giữ lỗi có chữ và icon, không chỉ dùng màu.
+
+## 4. Sửa tiêu đề và thuật ngữ
+
+Dùng tiếng Việt có dấu, kiểu viết nhất quán:
+
+- S04: “Điểm danh lớp”.
+- S05: “Cấu hình lịch lớp”.
+- S07: “Chi tiết sinh viên”.
+- S08: “Lịch sử điểm danh lớp”.
+
+Bỏ:
+- “Diem Danh Danh Sach Lop”.
+- “Chi Tiet Sinh Vien”.
+- “Lich Su Va Thong Ke Diem Danh”.
+
+Dùng:
+- “Slot” cho thứ tự học trong học kỳ.
+- “Khung giờ” cho thời gian trong ngày.
+- “Chưa ghi nhận”.
+- “Sửa P/A” thống nhất trên các dòng có quyền sửa.
+
+Cuối S08 đổi:
+“Đã hiển thị toàn bộ 5/20 buổi học hiện có”
+thành:
+“Đã ghi nhận 5/20 slot · Đã chốt 4/20 slot”.
+
+Không hiển thị mã S04/S07/S08 trên UI dành cho giảng viên.
+
+## 5. Hiển thị đầy đủ họ tên trên S04
+
+Tên “Nguyễn Hoàng Bảo Long” hiện bị cắt.
+
+Sửa StudentRow:
+- Cho họ tên xuống dòng khi cần.
+- Tăng chiều cao hàng.
+- Giữ MSSV rõ ràng.
+- Có thể chuyển trạng thái hoặc giờ ghi nhận xuống dòng riêng.
+- Không giảm font để ép vừa.
+- Không dùng dấu ba chấm che họ tên.
+
+Giữ nhãn:
+“Có ghi chú ở Slot 4”.
+
+Bấm nhãn phải mở đúng note Slot 4 của SE180123, không hiểu thành note của Slot 5.
+
+## 6. Bỏ nội dung ngoài nguồn và cam kết quá mức
+
+Bỏ:
+- “Giảng đường Gamma” ở S04.
+- “Phòng AL-R302” ở S08.
+- Thông tin chuyên ngành không cần thiết nếu nguồn không cung cấp.
+- Cam kết note “được lưu vĩnh viễn”.
+
+Trong sheet note, dùng:
+“Bạn có thể xem lại ghi chú sau ngày học.”
+
+Không khẳng định đã đồng bộ Drive hoặc lưu thành công nếu state chưa thể hiện điều đó.
+
+Không thêm phòng, giảng viên, chính sách vắng, trạng thái Trễ/Phép hoặc quy trình ngoài yêu cầu.
+
+## 7. Giữ phần cấu hình lịch đã đúng
+
+Lớp SE1921:
+- Bắt đầu 28/09/2026.
+- 10 tuần, 2 slot/tuần.
+- Thứ Hai và thứ Năm.
+- Khung giờ 2.
+- Được phép sửa vì chưa có slot đang điểm danh/đã chốt.
+- Nghỉ demo thứ Năm 15/10/2026.
+- Bù Chủ nhật 18/10/2026.
+- Tổng 20 slot.
+- Slot cuối 03/12/2026.
+
+Không thay đổi các dữ liệu đã đúng này.
+
+Bổ sung state chọn 1 slot/tuần:
+- Chỉ chọn một ngày trong nhóm.
+- Preview cập nhật theo lựa chọn.
+- Không tự giữ cả hai ngày khi tần suất là một slot/tuần.
+
+Lớp SE1920:
+- Giữ khóa cấu hình lịch.
+- Rút gọn đoạn giải thích đang lặp.
+- Mọi trường chỉ đọc và Lưu không thao tác được.
+- Có đường quay lại đúng lớp.
+
+## 8. Bổ sung đường từ S08 đến sinh viên
+
+Tạo state “Kết quả Slot 4” thuộc S08:
+- PRN232 · SE1920.
+- Slot 4 · 21/09/2026.
+- Khung giờ 2 · 09:30–11:45.
+- Tổng 28 P, 2 A.
+- Danh sách sinh viên có MSSV, họ tên đầy đủ và P/A.
+- SE180123 là P, có ghi chú.
+
+Luồng:
+S08 → Xem chi tiết Slot 4 → danh sách kết quả → chọn SE180123 → S07.
+
+Không tự mở một sinh viên bất kỳ khi bấm Xem chi tiết.
+
+Back:
+- S07 trở lại đúng danh sách kết quả Slot 4.
+- Danh sách kết quả trở lại S08, giữ ngữ cảnh.
+
+Nút sửa toàn màn S07:
+- Phải mở bước chọn slot rõ ràng.
+- Hoặc bỏ nếu đã có Sửa P/A trên từng dòng.
+- Không chọn ngầm một slot.
+
+## 9. Bổ sung trạng thái lưu
+
+Tạo cạnh S07:
+
+1. Đang lưu:
+- Ngăn bấm lặp.
+- Hiển thị đúng sinh viên và slot.
+- Không báo thành công trước khi lưu xong.
+
+2. Lưu thành công:
+- Thể hiện kết quả mới và note tương ứng.
+- Các thống kê liên quan phải khớp dữ liệu sau sửa.
+- Nếu minh họa một thay đổi mới, khai báo rõ dữ liệu trước/sau; không trộn với fixture ban đầu.
+
+3. Lưu thất bại:
+- Giữ nội dung và ngữ cảnh.
+- Có Thử lại/Hủy.
+- Không hiển thị như kết quả đã lưu.
+
+Phân biệt lỗi lý do trống với lỗi ghi dữ liệu.
+
+Không tuyên bố các thao tác đã hoạt động thật nếu công cụ chỉ tạo ảnh.
+
+## 10. Kiểm tra trước khi trả kết quả
+
+Rà soát:
+- Slot 3 thống nhất 29 P/1 A trên S04 và S08.
+- SE180123 là A tại Slot 3.
+- Tổng lớp bốn slot đã chốt 116/120, tỷ lệ 96,7%.
+- S07 có 4 P/1 A/20, tỷ lệ vắng 5,0%.
+- Tất cả overlay dùng cùng nền S07.
+- Note có cùng reason, giờ, người sửa và A → P.
+- Không còn tiêu đề không dấu, tên bị cắt hoặc phòng ngoài nguồn.
+- Slot đang mở bị chặn xuất.
+- Chỉ có P/A.
+- Chưa ghi nhận không bị hiểu thành trạng thái điểm danh thứ ba đã chốt.
+
+Accessibility:
+- Không cắt chữ khi tên dài hoặc chữ phóng lớn.
+- Body ưu tiên 16; nội dung phụ không dưới 14.
+- Vùng chạm mục tiêu tối thiểu 48 × 48.
+- Chữ thường tương phản tối thiểu 4,5:1.
+- Bàn phím không che trường lý do và hành động cần thiết.
+- Icon có nhãn truy cập.
+
+Nếu chưa đo/thử được, ghi “Cần kiểm tra trong Figma/prototype”.
+
+## 11. Kết quả yêu cầu
+
+Tạo frame V2.2 cho các màn/state được sửa, giữ nguyên V2.1.
+
+Trả thêm bảng:
+- Lỗi V2.1.
+- Sửa ở frame nào.
+- Bằng chứng nhìn thấy.
+- Phần chưa kiểm thử.
+
+State/overlay không tính thành màn hình chính mới.
+Không tự chốt Accept/Modify/Reject thay sinh viên.
+Không tính lượt sửa bổ sung này thành V3.
+Không tuyên bố hoàn thành Figma, accessibility hoặc kiểm thử người dùng chỉ từ ảnh.

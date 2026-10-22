@@ -1,0 +1,128 @@
+Bước tiếp theo là **thực hiện V1: sửa lỗi nghiệp vụ và tính nhất quán**, chưa đổi toàn bộ phong cách.
+
+Tôi đề xuất chấp nhận các sửa đổi dưới đây. Nếu đồng ý, bạn gửi prompt này **trong chính project Stitch đang có 10 màn hình**:
+
+```text
+Hãy cải tiến bộ giao diện FAP Attendance hiện tại thành phiên bản V1.
+
+Đây là vòng sửa nghiệp vụ và tính nhất quán dựa trên phản biện V0,
+không phải tạo một ứng dụng mới.
+
+Giữ:
+- Đủ 10 màn hình S01–S10.
+- Phong cách trắng–cam.
+- Cấu trúc mobile và các thành phần tốt của V0.
+- Thời khóa biểu dạng ô, cuộn ngang và nhãn slot bên trái.
+- Xác nhận chốt có tổng Present và số chưa ghi nhận chuyển Absent.
+- Ghi chú chỉnh sửa có lý do, thời gian và thay đổi trước/sau.
+
+Không tự bổ sung chức năng hoặc cam kết kỹ thuật ngoài yêu cầu.
+
+1. S01 — Bắt đầu workspace
+- Bỏ khu vực “MÔ PHỎNG XỬ LÝ LỖI (DEV & QA)”.
+- Không giới hạn email nhận diện workspace theo domain FPT.
+- Chỉ báo lỗi khi định dạng email không hợp lệ.
+- Tách trạng thái lỗi khỏi màn hình mặc định.
+- Bỏ cam kết “Offline 100%” và “thao tác dưới 1 giây”.
+- Giữ giải thích email chỉ nhận diện workspace, không thay thế
+  xác thực đăng nhập.
+
+2. S02 — Thời khóa biểu
+- Sửa thứ/ngày cho đúng lịch năm 2026.
+- Tuần bắt đầu thứ Hai và kết thúc Chủ nhật.
+- Nếu dùng ngày demo 24/09/2026:
+  đó là thứ Năm, thuộc tuần 21/09–27/09/2026.
+- Dùng một nguồn dữ liệu demo nhất quán cho các màn hình liên quan.
+- Ngày “Hôm nay” phải nhất quán trong kịch bản demo.
+- Không thêm phòng học hoặc thông tin không có trong nguồn.
+
+3. S03 — Import
+- Đổi tiêu đề thành “Import markbook”.
+- Bỏ yêu cầu tài khoản Drive bắt buộc thuộc domain FPT.
+- Giữ thông tin cập nhật roster và bảo toàn lịch sử.
+- Không mô tả việc import là đã hoàn tất trước khi người dùng xác nhận.
+
+4. S04 — Điểm danh lớp
+- Luôn hiển thị mã môn và mã lớp.
+- Phân biệt:
+  “Slot 2” là khung giờ trong ngày;
+  “Lần học 6/20” là thứ tự meeting trong học kỳ.
+- Thay bộ chọn Slot 1–4 nhập nhằng bằng bộ chọn meeting có:
+  lần học, ngày, slot trong ngày và giờ.
+- Số thứ tự meeting phải khớp lịch đã sinh.
+- Phân biệt chạm để xem sinh viên với thao tác đổi kết quả.
+- Sửa kết quả đã chốt phải yêu cầu lý do.
+- Giữ họ tên đầy đủ và icon note.
+
+5. S05 — Cấu hình lịch
+- Đổi tiêu đề thành “Cấu hình lịch lớp”.
+- Hiển thị mã môn và mã lớp.
+- Viết đầy đủ:
+  “Chỉ được đổi lịch khi lớp chưa có slot nào đang điểm danh
+  hoặc đã chốt.”
+- Không cắt mất thông báo quan trọng.
+- Thể hiện riêng trạng thái được sửa và bị khóa.
+- Không trình bày lớp đang điểm danh như vẫn được sửa lịch.
+- Ngày nghỉ phải liên quan meeting thực tế; học bù là ngày được
+  bổ sung rõ ràng, không tự suy diễn.
+
+6. S07 — Chi tiết sinh viên
+- Dùng đúng khung giờ:
+  Slot 1: 07:00–09:15.
+  Slot 2: 09:30–11:45.
+  Slot 3: 12:30–14:45.
+  Slot 4: 15:00–17:15.
+- Bỏ phòng học và “max 20%” vì chưa có yêu cầu xác nhận.
+- Bỏ nhãn B.1/B.2; dùng thuật ngữ thống nhất.
+- Giữ tỷ lệ vắng = A / tổng meeting đã lên lịch.
+- Đồng bộ ngày, giờ và kết quả với S04/S08.
+
+7. S08 — Lịch sử
+- Slot đang mở không được có nút xuất trông như đang khả dụng.
+- Thay bằng “Tiếp tục điểm danh”, hoặc khóa xuất với lý do rõ ràng.
+- Chỉ slot đã chốt và đủ P/A mới được xuất.
+- Sửa tiến độ theo tổng meeting thực tế, không nhầm với sĩ số.
+- Thống nhất cách gọi slot/lần học.
+
+8. S09 — Xuất kết quả
+- Bỏ “CSV chuẩn FAP” và mô tả nhập trực tiếp vào FAP.
+- Dùng:
+  “CSV điểm danh — trao đổi dữ liệu”.
+  “JSON — dùng với Chrome Extension”.
+- Giữ bản local là mặc định của luồng local-first.
+- Google Drive là tùy chọn, không bắt buộc để xuất.
+- Thư mục và tên file phải nhất quán với lớp/học kỳ.
+
+9. S10 — Google Drive
+- Bỏ “FAP Cloud”, “bộ nhớ mã hóa” và cam kết an toàn tuyệt đối
+  khi chưa có bằng chứng triển khai.
+- Dùng trạng thái cụ thể:
+  Đã lưu trên máy / Chờ đồng bộ / Đang đồng bộ /
+  Đã đồng bộ / Có xung đột.
+- Không mô tả remote mới hơn là điều kiện duy nhất của xung đột.
+- Không tự ghi đè hoặc tuyên bố có chức năng gộp tự động.
+- Khi đang đồng bộ, nút phải loading/disabled.
+
+Yêu cầu chung:
+- Giữ quy tắc QR đổi 15 giây, mã bí mật cố định mỗi lần bật chế độ.
+- Hai phút thuộc từng lượt sinh viên, không phải tự chốt cả lớp.
+- Không thay đổi nghiệp vụ S06 ngoài các điểm đã yêu cầu.
+- Các trạng thái trước/sau chốt phải được ghi rõ, không trình bày
+  dữ liệu của hai thời điểm như cùng một trạng thái.
+- Không tuyên bố đã kiểm thử hoặc đo accessibility.
+
+Sau khi sửa, liệt kê:
+- Màn hình đã thay đổi.
+- Vấn đề đã xử lý.
+- Điểm chưa xử lý hoặc cần tôi xác nhận.
+
+Không ghi đè hoặc xóa bằng chứng V0 đã lưu.
+```
+
+Sau khi Stitch sửa xong:
+
+1. Lưu ảnh màn hình đã thay đổi với tên `v1-s01-workspace.png`, `v1-s02-timetable.png`… vào [assets/stitch](D:/Fall2026/PRM393/Project_PRM393/prm323-lab2-SE193324/assets/stitch/).
+2. Giữ lại prompt và toàn bộ phản hồi Stitch.
+3. Gửi tôi kết quả V1 để đối chiếu với V0, rồi cập nhật nhật ký bằng **kết quả thực tế**.
+
+**Chưa làm V2 ngay:** cần kiểm tra V1 đã sửa đúng và không tạo thêm lỗi trước.

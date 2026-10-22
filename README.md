@@ -6,9 +6,9 @@ Rà soát tài liệu: 22/10/2026 (Asia/Saigon). Đã sửa các mục ngoài Fi
 - Persona một dòng: P01 · Minh, 36 tuổi minh họa, giảng viên FPT quản lý nhiều lớp trên Android; Primary Proto-Persona, Assumed, chưa phỏng vấn.
 - Phạm vi: Thiết kế UI/UX; hiện tiếp tục prototype Google Stitch, tạm gác Figma theo lựa chọn của sinh viên.
 - Link Stitch: [FAP Attendance prototype](https://stitch.withgoogle.com/preview/10059602616228007293?node-id=f4c596c319264fa182ad8c2c92ebf951). Sinh viên cung cấp ngày 11/10/2026; chưa xác minh quyền xem khi chưa đăng nhập.
-- Link repository Lab 2: [HungUniverse/prm323-lab2](https://github.com/HungUniverse/prm323-lab2). Sinh viên cung cấp ngày 11/10/2026; đã mở được trang công khai và thấy các thư mục tài liệu. Chưa tự upload bản sửa mới trong lượt này.
+- Link repository Lab 2 hiện tại: [HungUniverse/PRM392-Lab2](https://github.com/HungUniverse/PRM392-Lab2). Sinh viên cập nhật ngày 22/10/2026; đã kiểm tra 124 file khớp bộ local trước lượt khôi phục prompt. Các tệp bằng chứng prompt/xác nhận bổ sung trong lượt mới này chưa được Codex push.
 - Link Figma: Tạm gác theo lựa chọn của sinh viên; chưa có xác nhận được miễn yêu cầu trong đề.
-- Trạng thái: P01 đủ 12 trường; có stakeholder/assumption/coverage và traceability; ba flow, chỉ mục ảnh gốc S01–S10, state matrix, lựa chọn D01–D09 trong đặc tả, handoff sáu mục/màn và hai bảng ánh xạ. Chỉ dùng màn hình sinh viên đã gửi. Chưa có low-fi riêng, thư viện component dùng chung hoặc kết quả 360/412 của UI cuối. Prototype Stitch, bằng chứng ba vòng AI, nghiên cứu người dùng và thử handoff vẫn chưa hoàn tất/xác minh.
+- Trạng thái mới nhất: P01 đủ 12 trường; có discovery/traceability, ba flow, chỉ mục ảnh gốc S01–S10, state matrix, handoff sáu mục/màn và hai bảng ánh xạ. Chỉ dùng màn hình sinh viên gửi. Prompt ba vòng chính cùng V2.1/V2.2 đã khôi phục; còn file PNG V3 gốc. Checklist prototype, 360/412, accessibility và component/token được sinh viên xác nhận ổn (Reported), Codex chưa chạy/đo lại. Low-fi riêng, nghiên cứu người dùng và thử handoff vẫn chưa có bằng chứng riêng.
 
 ## Cấu trúc tài liệu
 
@@ -26,7 +26,7 @@ Rà soát tài liệu: 22/10/2026 (Asia/Saigon). Đã sửa các mục ngoài Fi
 - [Validation plan](design/validation-plan.md): task không dẫn dắt, mẫu ghi kết quả, UI checklist và retest.
 - [Nhật ký AI](ai/ai-design-log.md), [chỉ mục](ai/README.md) và [iteration evidence](ai/iteration-evidence.md): phân biệt hiện trạng, lịch sử và bằng chứng ba vòng còn thiếu.
 - [Ảnh Stitch](assets/stitch/) và [12 ảnh prototype](assets/stitch/prototype-2026-10-11/): Giữ nguyên bằng chứng đã nhận.
-- `assets/figma/`: Vị trí dự kiến nếu bổ sung Figma; chưa có PNG final được xác minh, không tính thư mục này là deliverable đã hoàn thành.
+- Không giữ placeholder Figma trống trong bộ nộp; Figma ngoài phạm vi hiện tại theo lựa chọn sinh viên.
 - [Flutter handoff](handoff/flutter-handoff.md): Sáu mục mỗi màn và hai bảng ánh xạ, chưa kiểm thử bàn giao.
 - [PowerPoint 12 slide dùng ảnh gốc](presentation/output/FAP_Attendance_Lab2_AnhGoc_2026-10-22.pptx): bản mới nhất, chỉ dùng màn hình sinh viên đã gửi. Dự kiến 10 phút; Notes có nguồn, link Stitch/GitHub bấm được. Bản có low-fi tự tạo đã rút khỏi thư mục nộp.
 - [Kịch bản demo](presentation/output/demo-script.md): Demo 5 phút cho ba flow, chuẩn bị dữ liệu, phương án dự phòng và câu hỏi thường gặp.
@@ -34,7 +34,8 @@ Rà soát tài liệu: 22/10/2026 (Asia/Saigon). Đã sửa các mục ngoài Fi
 
 ## Công cụ AI đã sử dụng
 
-- Google Stitch: Sinh giao diện và prototype; đã nhận link preview. Prompt/phản hồi của các lượt muộn và bộ ảnh V3 riêng còn thiếu, cần bổ sung đúng bản thực tế.
+- Google Stitch: Sinh giao diện và prototype; đã nhận link preview. [Prompt V1/V2/V2.1/V2.2/V3](ai/evidence/recovered-prompts-2026-10-22/README.md) đã khôi phục nguyên văn; sinh viên xác nhận dùng nguyên văn. V3 đã gửi bốn ảnh trong hội thoại, còn khôi phục file PNG gốc vào repo.
+- [Xác nhận của sinh viên](ai/student-confirmations.md): checklist prototype, 360/412, accessibility và component/token đều ổn theo sinh viên tự kiểm (Reported); không phải phép đo do Codex thực hiện. Đây là cập nhật mới hơn các dòng “chưa kiểm thử bởi Codex” trong tài liệu cũ.
 - Codex: Phân tích yêu cầu, phản biện ảnh, hỗ trợ tài liệu, lưu bằng chứng và soạn checklist. Review ảnh tĩnh không phải kiểm thử trực tiếp prototype.
 
 ## Việc tiếp theo
@@ -50,3 +51,10 @@ Figma nằm ngoài phạm vi sửa lần này; không có nghĩa yêu cầu nộ
 Không đưa OAuth secret, token hoặc dữ liệu cá nhân sinh viên chưa ẩn danh vào repository công khai.
 
 Repo Lab 2 đã có link do sinh viên cung cấp. Khi cập nhật repo, dùng nội dung thư mục này làm gốc và giữ [.gitignore](.gitignore) đi cùng. Đưa tài liệu, ảnh bằng chứng, PowerPoint và kịch bản lên; không đưa `presentation/.build/`, `node_modules/`, file tạm hoặc credential lên. Không cần đưa toàn bộ code Flutter của thư mục cha vào repo Lab 2. Codex chưa push các file sửa trong lượt này.
+
+## Bộ file hiện hành để push
+
+- Chỉ giữ một PowerPoint: [slide dùng ảnh gốc](presentation/output/FAP_Attendance_Lab2_AnhGoc_2026-10-22.pptx), đi cùng [kịch bản demo](presentation/output/demo-script.md).
+- Giữ toàn bộ ảnh gốc, prompt/phản biện, manifest và snapshot lịch sử trong `ai/evidence/`, `assets/ai/`, `assets/stitch/`; không xóa vì tên có V0/V1/V2 hoặc ngày cũ.
+- Ba PowerPoint bị thay thế, thư mục dựng slide và placeholder trống đã chuyển sang bản dự phòng ngoài repo ngày 22/10. Không cần đưa bản dự phòng lên GitHub.
+- Không xóa `.git/`, không thêm code Flutter của thư mục cha vào repo bài thiết kế này. Kiểm tra danh sách thay đổi trước khi commit; lượt dọn này không tự stage, commit hoặc push.

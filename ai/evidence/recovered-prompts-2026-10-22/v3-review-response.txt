@@ -1,0 +1,56 @@
+**V3 đã thể hiện rõ hơn “đã lưu trên thiết bị” và “Drive đang chờ”, nhưng còn một số nội dung sai phạm vi.** Bốn ảnh này chủ yếu là **các trạng thái của S09**, chưa phải bộ S09–S10 đầy đủ.
+
+## Kiểm tra từng ảnh
+
+| Ảnh | Điểm tốt | Cần sửa |
+|---|---|---|
+| **1 — Chặn xuất Slot 5** | Đúng 26 P/0 A/4 chưa ghi; chặn xuất và có đường về điểm danh. | **Sai định dạng Excel/PDF**, thêm chữ ký, ảnh xác thực và tự gửi lên FAP ngoài yêu cầu. Chỉ giữ JSON/CSV và local/Drive. |
+| **2 — Sẵn sàng xuất** | Đúng 28 P/2 A; JSON/CSV rõ; local mặc định, Drive tùy chọn; đường dẫn thống nhất. | Ngày và giờ bị cắt. Cần hiển thị đầy đủ **21/09/2026 · 09:30–11:45**. |
+| **3 — Xuất thành công** | Phân biệt local và Drive; có tên file, tóm tắt kết quả, chia sẻ. | Bỏ **“mã hóa chuẩn JSON FAP”**, **“đã xác thực kỹ thuật số”** và nhập vào cổng khảo thí. Đây chưa phải khả năng được chứng minh. |
+| **4 — Local xong, Drive chờ** | Giúp người dùng hiểu không cần xuất lại, vẫn chia sẻ bản local được. | Không cam kết **tắt app thì Worker tự chạy khi có mạng** nếu chưa triển khai/kiểm chứng. Nhãn “đang chạy” và “đang chờ” cũng cần phân biệt. |
+
+## Những sửa đổi quan trọng
+
+### 1. Không mô tả app tự gửi dữ liệu vào FAP
+
+Luồng đúng là:
+
+**App xuất JSON → giảng viên nạp vào Extension → Extension thao tác trên FAP.**
+
+Vì vậy, bỏ “Đồng bộ Cổng Khảo thí FAP” và “Tự động gửi lên máy chủ phòng Đào tạo”.
+
+### 2. Làm rõ chốt và xuất là hai tác vụ khác nhau
+
+Ở ảnh 1 nên ghi:
+
+> Xuất file không thay đổi kết quả. Khi chốt danh sách, các ô chưa ghi nhận sẽ chuyển thành A.
+
+Không để câu “không tự gán trạng thái vắng” bị hiểu là chốt cũng không bổ sung A.
+
+### 3. Sửa thông báo chờ Drive
+
+Thay cam kết chạy nền khi tắt app bằng:
+
+> File đã lưu trên thiết bị. Bản sao Drive chưa hoàn tất. Hãy mở ứng dụng và thử đồng bộ lại khi có mạng.
+
+Chỉ hiển thị “SHA-256 đã kiểm tra” nếu thực sự có bước kiểm tra tương ứng.
+
+### 4. Thống nhất tiêu đề và dữ liệu
+
+- Cả bốn màn: **“Xuất kết quả điểm danh”**, không dùng tiêu đề không dấu.
+- Cùng file demo nhưng ảnh 3 ghi **4,2 KB**, ảnh 4 ghi **12,4 KB**: nên thống nhất nếu đó là cùng một bản file.
+- Dùng **93,3%** nhất quán.
+
+## Phần còn thiếu của V3
+
+Cần bổ sung **màn S10 thực sự**, gồm:
+
+- Chưa kết nối Drive.
+- Đang đồng bộ, nút chống bấm lặp.
+- Đã đồng bộ.
+- Offline và Thử lại.
+- Conflict, không tự ghi đè.
+
+S09 còn thiếu **đang xuất** và **lỗi xuất → thử lại**.
+
+**Không cần tạo lại cả bộ:** giữ bố cục ảnh 2–4, sửa nội dung vượt phạm vi và bổ sung S10. Tương tác, accessibility và khả năng lưu/đồng bộ thật vẫn chưa được xác minh từ ảnh.

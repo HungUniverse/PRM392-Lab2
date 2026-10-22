@@ -1,0 +1,397 @@
+Dán prompt này vào **project Stitch hiện tại**, kèm ảnh S09–S10 cũ nếu có. V3 tập trung vào **xuất file và đồng bộ**, không thiết kế lại các màn V2.2.
+
+:::writing{variant="standard" id="82649"}
+Bạn là chuyên gia thiết kế UI/UX mobile.
+
+Hãy tạo vòng cải tiến V3 cho ứng dụng FAP Attendance dành cho giảng viên Trường Đại học FPT.
+
+Mục tiêu V3:
+Giảng viên xuất đúng dữ liệu điểm danh, biết file đã lưu ở đâu và xử lý được tình huống đồng bộ Drive bị lỗi hoặc xung đột.
+
+Chỉ tập trung:
+- S09 — Xuất kết quả điểm danh.
+- S10 — Google Drive và đồng bộ.
+- Các trạng thái/overlay liên quan.
+
+Giữ nguyên V0, V1, V2, V2.1 và V2.2 để đối chiếu.
+Không thiết kế lại dashboard, roster, lịch sử hoặc QR.
+Không coi lượt sửa bổ sung V2.1/V2.2 là V3.
+
+## 1. Persona và bối cảnh
+
+Người dùng là giảng viên Trường Đại học FPT:
+- Quản lý nhiều lớp.
+- Cần xuất kết quả đúng lớp và slot.
+- Có thể sử dụng điện thoại khi mạng không ổn định.
+- Cần biết dữ liệu đã lưu trên thiết bị hay đã lên Drive.
+- Không muốn mất dữ liệu hoặc tạo nhiều file trùng vì bấm lại.
+- Cần thông báo dễ hiểu và hành động phục hồi rõ ràng.
+
+Không tự đặt thông tin cá nhân hoặc tạo kết quả phỏng vấn cho persona.
+
+Lab này là thiết kế/prototype.
+Không tuyên bố OAuth, ghi file hoặc đồng bộ đã hoạt động thật chỉ từ ảnh.
+
+## 2. Phong cách giữ nguyên
+
+Trắng–cam chủ đạo:
+- Primary: #C93C13.
+- Accent: #F4511E.
+- Background: #FFF7F3.
+- Surface: #FFFFFF.
+- Text: #243047.
+- Text phụ: #667085.
+- Success: #16835D.
+- Error: #C93A2B.
+- Information: #2563B8.
+
+Giữ component, spacing và typography nhất quán với V2.2.
+
+Mỗi trạng thái có một hành động chính rõ ràng.
+Không dùng quá nhiều đoạn hướng dẫn kỹ thuật hoặc card trang trí.
+
+Tiêu đề tiếng Việt có dấu:
+- “Xuất kết quả điểm danh”.
+- “Google Drive và đồng bộ”.
+
+Không hiển thị mã S09/S10 trên nút dành cho giảng viên.
+
+## 3. Dữ liệu demo thống nhất
+
+Dùng kết quả:
+- Học kỳ FA26.
+- Môn PRN232.
+- Lớp SE1920.
+- Slot 4.
+- Thứ Hai, 21/09/2026.
+- Khung giờ 2: 09:30–11:45.
+- Trạng thái: Đã chốt.
+- Sĩ số: 30.
+- P: 28.
+- A: 2.
+- Chưa ghi nhận: 0.
+- Có một kết quả đã chỉnh sửa.
+
+Thuật ngữ:
+- Slot 4 là thứ tự trong học kỳ.
+- Khung giờ 2 là thời gian trong ngày.
+- Không dùng “Buổi”, “Lần học” hoặc “Meeting” làm nhãn thứ tự.
+
+Tài khoản Drive minh họa:
+gv.demo@example.com
+
+Dữ liệu là demo, không dùng tài khoản/token/thông tin sinh viên thật.
+
+## 4. Quy tắc lưu và xuất
+
+- Không dùng database.
+- Dữ liệu chính lưu local-first.
+- Google Drive là tùy chọn.
+- Không yêu cầu đăng nhập Drive mới được xuất local.
+- CSV dùng trao đổi dữ liệu.
+- JSON dùng cho Chrome Extension.
+- Không nói CSV được FAP hỗ trợ import trực tiếp.
+- Extension đọc file và thao tác trên trang FAP đã đăng nhập; không mô tả app tự kết nối API FAP.
+
+Chỉ xuất:
+- Một lớp.
+- Một slot.
+- Slot đã chốt.
+- Đủ P/A, không còn kết quả chưa ghi nhận.
+
+Không xuất QR token, mã bí mật, mật khẩu hoặc token đăng nhập.
+
+Bản lưu lịch sử chính của mỗi slot là một JSON có revision/audit theo nghiệp vụ hiện tại.
+Không đưa lại mô hình hai file final/correction riêng.
+File xuất là dữ liệu dẫn xuất; UI không cần giải thích schema kỹ thuật dài.
+
+## 5. S09 — Xuất kết quả
+
+### Bố cục
+
+1. Ngữ cảnh:
+- PRN232 · SE1920.
+- Slot 4 · 21/09/2026.
+- Khung giờ 2 · 09:30–11:45.
+- Badge Đã chốt.
+- 28 P, 2 A, 0 chưa ghi nhận.
+
+2. Định dạng:
+- JSON — Dùng với Chrome Extension.
+- CSV — Trao đổi dữ liệu.
+
+Giải thích ngắn dưới lựa chọn, không viết đoạn quảng cáo dài.
+
+3. Nơi lưu:
+- “Lưu trên thiết bị” là bản mặc định.
+- Không có công tắc khiến người dùng nghĩ có thể tắt bản local.
+- Có tùy chọn “Sao lưu thêm lên Google Drive”.
+- Khi chưa kết nối, giải thích Drive không bắt buộc và có lối kết nối.
+
+4. Preview tên file:
+attendance_FA26_PRN232_SE1920_slot04_2026-09-21.json
+
+Đổi phần mở rộng tương ứng khi chọn CSV.
+Không cắt phần môn, lớp, slot và ngày quan trọng; cho xuống dòng nếu cần.
+
+5. Hành động chính:
+“Xuất file”.
+
+Không hứa đã lưu hoặc đồng bộ trước khi thao tác thành công.
+
+### Nơi lưu minh họa
+
+Dùng cùng cấu trúc dễ nhận biết trên S09 và S10:
+
+FAP Attendance/
+  FA26/
+    classes/
+      PRN232_SE1920/
+        exports/
+          attendance_FA26_PRN232_SE1920_slot04_2026-09-21.json
+
+Ghi rõ đây là đường dẫn demo cho thiết kế.
+Không khẳng định source đã hỗ trợ cấu trúc chính xác này nếu chưa kiểm chứng.
+Không dùng đường dẫn Windows trên giao diện mobile.
+
+Hiển thị riêng:
+- Nơi lưu trên thiết bị.
+- Nơi sao lưu Drive.
+
+Không dùng hai tên gốc khác nhau như Attendance_2026 và FAP Attendance mà không giải thích.
+
+## 6. Các trạng thái S09
+
+### A. Sẵn sàng xuất
+
+- Đúng metadata.
+- Đủ P/A.
+- Chọn được JSON/CSV.
+- Drive tùy chọn.
+
+### B. Chưa đủ điều kiện
+
+Dùng state riêng với Slot 5:
+- Đang điểm danh.
+- 26 P, 0 A, 4 chưa ghi nhận.
+- Chặn xuất.
+- Thông báo:
+“Cần chốt danh sách trước khi xuất.”
+- Có đường “Về điểm danh”.
+
+Không tự chuyển bốn ô trống thành A chỉ vì bấm xuất.
+
+### C. Đang xuất
+
+- Nhãn “Đang tạo file…”.
+- Ngăn bấm xuất lặp.
+- Không hiện thông báo thành công.
+
+### D. Xuất thành công
+
+- “Đã lưu file trên thiết bị”.
+- Tên và vị trí file.
+- Hành động mở/chia sẻ file phù hợp mobile.
+- Nếu có sao lưu Drive, trạng thái Drive hiển thị riêng.
+
+Không dùng một thông báo “Hoàn tất” chung khiến người dùng tưởng cả local và Drive đều xong.
+
+### E. Xuất lỗi
+
+- “Chưa lưu được file”.
+- Giải thích dễ hiểu, không stack trace.
+- Giữ lựa chọn định dạng và ngữ cảnh lớp/slot.
+- Có Thử lại và Hủy/Quay lại.
+- Không báo đã tạo file nếu chưa lưu được.
+
+### F. Local thành công, Drive chưa xong
+
+- “Đã lưu trên thiết bị”.
+- “Bản sao Drive đang chờ đồng bộ” nếu đã kết nối và có tác vụ chờ.
+- Không yêu cầu xuất lại.
+- Có “Xem trạng thái đồng bộ”.
+
+## 7. S10 — Google Drive và đồng bộ
+
+### Nội dung chính
+
+- Tài khoản đang kết nối hoặc trạng thái chưa kết nối.
+- Dữ liệu trên thiết bị.
+- Lần đồng bộ thành công gần nhất.
+- Tệp đang tải và số tệp còn chờ.
+- Đường dẫn Drive thống nhất với S09.
+- Hành động phù hợp trạng thái.
+
+Không đưa tên phòng, chính sách trường hoặc tuyên bố tự đồng bộ từ FAP.
+
+### Phân biệt rõ
+
+1. Chỉ lưu trên thiết bị:
+- Chưa kết nối Drive.
+- Không báo mất dữ liệu.
+- Có “Kết nối Google Drive”.
+- Có thể quay lại và dùng app bình thường.
+
+2. Chờ đồng bộ:
+- Đã kết nối, có thay đổi chưa tải lên.
+- Hiển thị số tệp chờ.
+
+3. Đang đồng bộ:
+- “Đang tải 1 tệp”.
+- Hiển thị tệp đang xử lý.
+- Nếu không còn tệp khác, ghi “0 tệp còn chờ”.
+- Không gọi tệp đang tải là tệp vẫn chưa bắt đầu.
+- Nút đồng bộ bị khóa/loading để ngăn bấm lặp.
+
+4. Đã đồng bộ:
+- Thông báo rõ.
+- Lần thành công gần nhất.
+- Không còn tệp chờ.
+
+Không dùng “Đã đồng bộ” chỉ vì local đã lưu.
+
+## 8. Offline, OAuth và conflict
+
+### Offline
+
+Nếu local đã lưu:
+“Đã lưu trên thiết bị. Chưa thể đồng bộ vì mất kết nối.”
+
+Có:
+- Thử lại.
+- Quay về lịch tuần.
+
+Không mất kết quả và không yêu cầu chốt/xuất lại.
+
+### Kết nối bị hủy hoặc quyền bị thu hồi
+
+- Giải thích chưa kết nối được.
+- Có Kết nối lại hoặc tiếp tục chỉ dùng thiết bị.
+- Không xóa file local.
+- Không báo đồng bộ thành công.
+
+### Xung đột
+
+Điều kiện:
+Cùng một dữ liệu đã thay đổi ở thiết bị và Drive.
+
+Hiển thị:
+“Có xung đột dữ liệu. Chưa ghi đè lên phiên bản nào.”
+
+Cho biết:
+- Lớp/slot hoặc file liên quan.
+- Trạng thái đồng bộ chưa hoàn tất.
+- Dữ liệu cần được kiểm tra.
+
+Có:
+- “Xem hướng dẫn kiểm tra”.
+- “Quay lại”.
+
+Không tự thêm bộ merge hoặc nút chọn phiên bản như chức năng đã triển khai nếu source chưa hỗ trợ.
+Không tự ghi đè, tự retry upload hoặc báo “Đã giải quyết” khi chưa có quyết định.
+
+Không dùng thuật ngữ kỹ thuật như pendingSync/conflict_backup làm nhãn chính.
+
+## 9. Bấm lặp và file trùng
+
+Trong prototype phải thể hiện:
+- Đang xuất: không tạo thêm tác vụ khi bấm lại.
+- Đang đồng bộ: nút loading/disabled.
+- Retry xử lý tác vụ thất bại, không gợi ý tạo bản sao mới.
+- Không đổi tên thành “copy”, “copy 2” sau mỗi lần đồng bộ.
+
+Không khẳng định chống trùng đã được kiểm thử thật nếu mới có ảnh.
+
+## 10. Luồng prototype V3
+
+### Luồng A — Chỉ dùng thiết bị
+
+S09 sẵn sàng
+→ chọn JSON/CSV
+→ Xuất
+→ Đang xuất
+→ Đã lưu trên thiết bị
+→ Mở/chia sẻ hoặc quay lại.
+
+Không bắt buộc qua S10.
+
+### Luồng B — Sao lưu Drive
+
+S09 xuất thành công
+→ S10
+→ Đang đồng bộ
+→ Đã đồng bộ.
+
+### Luồng C — Offline rồi phục hồi
+
+Local đã lưu
+→ Drive lỗi mạng
+→ Thử lại
+→ Đang đồng bộ
+→ Thành công.
+
+### Luồng D — Conflict
+
+S10 phát hiện xung đột
+→ Xem hướng dẫn
+→ Quay lại với trạng thái chưa giải quyết.
+
+### Luồng E — Hủy/lỗi
+
+- Hủy kết nối không làm mất local.
+- Lỗi xuất giữ form, có Thử lại/Hủy.
+- Back về đúng lớp/slot đã mở.
+- Không báo thành công khi chỉ đóng dialog.
+
+## 11. Accessibility
+
+Mục tiêu:
+- Body ưu tiên 16.
+- Nội dung phụ không dưới 14.
+- Vùng chạm tối thiểu 48 × 48.
+- Tương phản chữ thường tối thiểu 4,5:1.
+- Trạng thái có chữ/icon, không chỉ dựa vào màu.
+- Tên file và đường dẫn có thể xuống dòng.
+- Icon kết nối, file, chia sẻ, lỗi có nhãn truy cập.
+- Loading không khiến người dùng mất thông tin ngữ cảnh.
+- Thử chiều rộng 360/412 và chữ phóng lớn.
+
+Nếu chưa đo hoặc thử được, ghi:
+“Cần kiểm tra trong Figma/prototype”.
+
+Không cam kết mã hóa, an toàn tuyệt đối hoặc lưu vĩnh viễn khi chưa có bằng chứng.
+
+## 12. Kết quả cần trả về
+
+Tạo frame:
+
+- V3_S09_ExportReady.
+- V3_S09_ExportBlocked.
+- V3_S09_Exporting.
+- V3_S09_ExportSuccess.
+- V3_S09_ExportError.
+- V3_S09_LocalSavedDrivePending.
+- V3_S10_Disconnected.
+- V3_S10_Connecting.
+- V3_S10_Pending.
+- V3_S10_Syncing.
+- V3_S10_Synced.
+- V3_S10_Offline.
+- V3_S10_Reconnect.
+- V3_S10_Conflict.
+- V3_S10_ConflictHelp.
+
+Các frame trạng thái/overlay không tính thành màn hình chính mới.
+
+Trả thêm:
+1. Bảng vấn đề trước → thay đổi V3.
+2. Giải thích cách phân biệt local và Drive.
+3. Sơ đồ nối các luồng.
+4. Những giả định và phần chưa kiểm thử.
+
+Không tự ghi Accept/Modify/Reject thay sinh viên.
+Không tuyên bố đã hoàn thành Figma hoặc ba vòng cải tiến chỉ vì tạo đủ ảnh.
+S06 QR còn thiếu là khoảng trống riêng, không coi V3 này đã hoàn thiện S06.
+:::
+
+Sau khi tạo, lưu ảnh với tiền tố **`v3-`**, đồng thời giữ prompt thực tế và phản hồi Stitch để làm bằng chứng.

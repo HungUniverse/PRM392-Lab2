@@ -2,16 +2,18 @@
 
 - **Sinh viên:** SE193324.
 - **Người dùng mục tiêu:** Giảng viên Trường Đại học FPT.
-- **Ngày cập nhật nhật ký:** 22/10/2026 (Asia/Saigon). Mục 1–14 ghi các lượt cũ; không sửa ngược prompt/snapshot. Mục 15–16 ghi thay đổi mới, mục 16 chốt chỉ dùng màn hình sinh viên gửi.
+- **Ngày cập nhật nhật ký:** 22/10/2026 (Asia/Saigon). Mục 17 khôi phục nguyên văn prompt và ghi xác nhận sinh viên; **mục 18 là lượt dọn bộ file để push**. Không sửa ngược prompt/snapshot lịch sử.
 - **Phạm vi:** Thiết kế UI/UX mobile cho giảng viên dựa trên project FAP Attendance cũ.
-- **Trạng thái:** V0 đã tạo bằng một prompt theo xác nhận của sinh viên và được phản biện. Đã nhận/phản biện 9 ảnh V1 (thiếu S06), lưu/kiểm tra 7 ảnh V2; sinh viên đã cung cấp thêm ảnh V3 trong hội thoại nhưng bộ lưu V3 riêng và prompt/phản hồi còn thiếu. Đã lưu/review 12 ảnh prototype Stitch ba flow, chưa trực tiếp kiểm thử. Chưa tự công nhận hoàn tất ba vòng cải tiến.
+- **Trạng thái hiện hành:** đã khôi phục nguyên văn prompt V1/V2/V2.1/V2.2/V3 từ câu trả lời gốc; sinh viên xác nhận dùng nguyên văn. Có 9 ảnh V1, 7 ảnh V2 và review; V3 đã gửi bốn ảnh trong hội thoại, chưa khôi phục được bộ PNG ở đường dẫn tạm. Checklist prototype, 360/412, accessibility và component/token được sinh viên xác nhận ổn (Reported); Codex chưa chạy/đo lại. Không tiếp tục ghi thiếu prompt hoặc sinh viên chưa làm V3.
 - **Bản lưu prompt/phản biện:** [Bộ V0](evidence/2026-10-11/README.md) gồm 23 ảnh; [bộ phản biện V1](evidence/2026-10-11/README-v1.md) gồm 12 ảnh. Đây là ảnh chụp bản lưu nội dung, không phải ảnh chat gốc.
 - **Bộ kiểm tra V2:** [7 ảnh nguyên bản và nhận xét từng ảnh](evidence/2026-10-11/README-v2.md); khác với các ảnh bản lưu nội dung ở trên.
 - **Thư mục ảnh bằng chứng:** [assets/stitch](../assets/stitch/); [chỉ mục hiện hành](README.md) phân biệt trạng thái mới với các bộ lưu lịch sử.
-- **Repository hiện tại:** [HungUniverse/prm323-lab2](https://github.com/HungUniverse/prm323-lab2), đã mở được công khai. Các ghi chú chưa có repo ở mục 11–12 mô tả thời điểm trước khi nhận link. Bản mới nhất là mục 16, chưa tự push.
+- **Repository hiện tại:** [HungUniverse/PRM392-Lab2](https://github.com/HungUniverse/PRM392-Lab2), sinh viên đã upload bộ 124 file ngày 22/10 và Codex kiểm tra khớp local. Repo cũ và ghi chú chưa có repo/upload trong các mục trước là lịch sử. Bộ khôi phục prompt mới ở mục 17 chưa tự push.
 - **Hiện trạng 22/10 sau yêu cầu chỉ dùng ảnh gốc:** [P01](../ux/persona.md) đủ 12 trường; có discovery, traceability, chỉ mục ảnh gốc và state matrix; đã rút low-fi/UI kit tự tạo khỏi bộ nộp. D01–D09 là lựa chọn trong đặc tả, chưa xác minh áp dụng Stitch. Xem [iteration evidence](iteration-evidence.md) và [bảng ngoài Figma](../NON_FIGMA_STATUS.md).
 
 > Nhật ký phân biệt yêu cầu trong prompt và kết quả đã được xác minh. Việc có ảnh V0 không đồng nghĩa đã đạt accessibility, có prototype hoạt động hoặc hoàn thành Figma.
+
+> **Cập nhật trạng thái các mục 4–7:** các ghi chú “chưa có prompt” hoặc “chưa có quyết định” bên dưới mô tả thời điểm ghi cũ. Hiện đã có prompt gốc được khôi phục, xác nhận sử dụng và bảng quyết định thể hiện trong prompt tại [bộ mới](evidence/recovered-prompts-2026-10-22/README.md). Không tự suy ra mọi đầu ra Stitch đúng hoàn toàn hoặc mọi đề xuất sau phản biện đã được người dùng duyệt.
 
 ## 1. Danh sách công cụ AI và mục đích
 
@@ -889,7 +891,7 @@ Không dùng nhận xét sở thích như “tôi thích hơn” làm lý do duy
 - **Ảnh V1:** Đã có 9 ảnh, mục 4; thiếu S06. **V2:** Đã có 7 ảnh, mục 5. **V3:** Đã nhận qua hội thoại, chưa có bộ lưu riêng đầy đủ; không dùng bộ prototype thay ảnh V3 gốc.
 - **Link prototype Stitch:** [FAP Attendance](https://stitch.withgoogle.com/preview/10059602616228007293?node-id=f4c596c319264fa182ad8c2c92ebf951), sinh viên cung cấp ngày 11/10/2026; chưa xác minh quyền xem khi chưa đăng nhập.
 - **Link Figma:** Chưa cung cấp.
-- **Ảnh export cuối từ Figma:** Chưa ghi nhận; thư mục dự kiến [assets/figma](../assets/figma/).
+- **Ảnh export cuối từ Figma tại thời điểm này:** Chưa ghi nhận; `assets/figma/` chỉ là vị trí dự kiến. Placeholder trống đã rút khỏi bộ nộp ở mục 18.
 - **Prototype ba luồng:** Sinh viên cho biết đã có Stitch prototype; đã lưu 12 ảnh/review, chưa trực tiếp xác minh thao tác. Xem mục 10.
 - **Kiểm thử handoff với người khác:** Chưa ghi nhận.
 
@@ -915,7 +917,7 @@ Không dùng nhận xét sở thích như “tôi thích hơn” làm lý do duy
 
 - **Yêu cầu của sinh viên:** “hãy chuẩn bị slide và kịch bản demo cho tôi”. Sau đó cung cấp link Stitch ở mục 8 và xác nhận chưa có link repository.
 - **Nguồn hướng dẫn:** `D:/Fall2026/PRM393/PRM323_Lab2_HuongDan_Slide_Presentation_Demo.docx`, đã đọc phần chữ và bảng; đối chiếu tài liệu dự án và ảnh gốc hiện có. Không coi hướng dẫn này là miễn yêu cầu Figma trong đề gốc.
-- **Kết quả:** [PowerPoint 12 slide](../presentation/output/FAP_Attendance_Lab2_SE193324_Final.pptx), dự kiến 10 phút, có Notes tiếng Việt; [kịch bản demo 5 phút](../presentation/output/demo-script.md) gồm ba flow, dữ liệu chuẩn bị, nhánh lỗi/Hủy, phương án dự phòng và Q&A.
+- **Kết quả tại thời điểm này:** PowerPoint 12 slide `FAP_Attendance_Lab2_SE193324_Final.pptx`, dự kiến 10 phút, có Notes tiếng Việt; [kịch bản demo 5 phút](../presentation/output/demo-script.md) gồm ba flow, dữ liệu chuẩn bị, nhánh lỗi/Hủy, phương án dự phòng và Q&A. PowerPoint cũ đã chuyển sang dự phòng ngoài repo ở mục 18, không còn là bản nộp hiện hành.
 - **Cách sử dụng AI:** Codex soạn nội dung và file từ bằng chứng đã có, không sửa ảnh UI, không dựng kết quả kiểm thử. Phép tính contrast được ghi là tính trên token; UI V0/V2 không được gọi là low-fi/final. Các quyết định chưa xác nhận vẫn là đề xuất.
 - **Kiểm tra file:** kiểm tra cấu trúc PowerPoint, số slide, font, hình học và hai bảng native; render để kiểm tra chữ/bố cục. Không thay thế kiểm thử prototype hoặc lần chạy thử thuyết trình trong PowerPoint của sinh viên.
 - **Giới hạn cần cập nhật trước nộp:** quyền xem link Stitch, repository, low-fi, bằng chứng V3 và S10 mới, quyết định của sinh viên và kết quả test thực tế. Kịch bản sửa P/A phải đổi trạng thái thật và cập nhật tổng, không dùng thao tác P → P làm bằng chứng chỉnh sửa.
@@ -932,7 +934,7 @@ Không dùng nhận xét sở thích như “tôi thích hơn” làm lý do duy
 ## 13. Làm lại slide theo nội dung chính — 11/10/2026
 
 - **Yêu cầu của sinh viên:** cung cấp `https://github.com/HungUniverse/prm323-lab2.git`, yêu cầu làm lại slide có bố cục rõ, bỏ mã code/mã màu khó hiểu và chỉ nêu nội dung chính.
-- **Bản mới:** [12 slide trình bày](../presentation/output/FAP_Attendance_Lab2_ThuyetTrinh.pptx), thay bảng kỹ thuật bằng nhóm ý ngắn và ảnh gốc. Trình tự: tổng quan, vấn đề, người dùng, phạm vi, cách dùng AI, phản biện, nguyên tắc giao diện, ba luồng, demo, kết luận và tài liệu.
+- **Bản ở thời điểm này:** 12 slide `FAP_Attendance_Lab2_ThuyetTrinh.pptx`, thay bảng kỹ thuật bằng nhóm ý ngắn và ảnh gốc. Trình tự: tổng quan, vấn đề, người dùng, phạm vi, cách dùng AI, phản biện, nguyên tắc giao diện, ba luồng, demo, kết luận và tài liệu. Bản đã bị thay thế, chuyển sang dự phòng ngoài repo ở mục 18.
 - **Cách viết:** không có mã màu, tên widget hoặc mã màn hình trong phần chữ thuyết trình. Dùng tên tác vụ dễ hiểu; giữ mã lớp/MSSV có sẵn trong ảnh bằng chứng, không sửa ảnh. Các ví dụ và giới hạn còn thiếu được giải thích trong Notes tiếng Việt.
 - **Liên kết:** đã mở được trang GitHub công khai với các thư mục tài liệu. Đã chèn GitHub và Stitch vào slide cuối, README, checklist và kịch bản. Không push file hoặc đổi Git remote trong lượt này.
 - **Kịch bản:** cập nhật bảng thời lượng 12 slide tổng 10 phút, giữ demo ba luồng 5 phút và hướng dẫn dữ liệu/Hủy/lý do trống. D01–D09 vẫn chờ sinh viên chốt, không tự ghi thử nghiệm đã đạt.
@@ -941,7 +943,7 @@ Không dùng nhận xét sở thích như “tôi thích hơn” làm lý do duy
 ## 14. Sửa slide theo hướng dẫn đánh giá — 11/10/2026
 
 - **Yêu cầu:** sau khi đọc lại hướng dẫn và rà soát phần thiếu, sinh viên yêu cầu sửa slide như yêu cầu.
-- **Bản mới nhất:** [12 slide bám sát hướng dẫn](../presentation/output/FAP_Attendance_Lab2_BamSatYeuCau_Final.pptx), có sơ đồ điều hướng 10 màn hình, ba flow kèm nhánh Hủy/lỗi, trích prompt thật và toàn văn trong Notes, trọng tâm V1/V2/V3, năm phát hiện UX, bốn ví dụ accept/modify/reject, gallery màn hình, đặc tả design system, accessibility và hai bảng handoff.
+- **Bản ở thời điểm này:** 12 slide `FAP_Attendance_Lab2_BamSatYeuCau_Final.pptx`, có sơ đồ điều hướng 10 màn hình, ba flow kèm nhánh Hủy/lỗi, trích prompt thật và toàn văn trong Notes, trọng tâm V1/V2/V3, năm phát hiện UX, bốn ví dụ accept/modify/reject, gallery màn hình, đặc tả design system, accessibility và hai bảng handoff. Bản đã bị thay thế, chuyển sang dự phòng ngoài repo ở mục 18.
 - **Minh bạch:** bản quyết định vẫn là đề xuất chờ sinh viên chốt; V1/V2/V3 chưa đủ chuỗi bằng chứng; không dựng low-fi hoặc ảnh responsive giả; gallery dùng chín màn prototype hiện tại và S10 V1 có nhãn. Contrast ghi là phép tính token, các test chưa chuyển thành đã đạt.
 - **Trình bày:** giữ 12 slide, lời dẫn tổng dự kiến 600 giây, demo 300 giây riêng; đồng bộ kịch bản, README và checklist. Không đưa mã màu hoặc đoạn code lên slide; bảng handoff giữ tên widget làm ví dụ theo hướng dẫn.
 - **Kiểm tra file:** render và xem từng slide, kiểm tra bảng/sơ đồ chỉnh sửa được và liên kết; đây không phải kết quả kiểm thử prototype hoặc xác nhận quyền truy cập công khai. Không push GitHub hoặc sửa Flutter, ảnh gốc và bằng chứng lịch sử.
@@ -965,3 +967,21 @@ Không dùng nhận xét sở thích như “tôi thích hơn” làm lý do duy
 - **Nguồn hình hiện hành:** [12 ảnh ba flow và S10 V1](../design/screen-evidence.md). Slide giữ đúng ảnh gốc, không dựng lại giao diện hoặc chỉnh ảnh để che sai khác.
 - **Tài liệu:** giữ phần phân tích/P01/traceability/handoff, sửa các tuyên bố đã có low-fi/UI kit thành trạng thái còn thiếu bằng chứng. State matrix là tiêu chí mục tiêu, không phải ảnh mới hoặc test đã chạy.
 - **Đầu ra:** [slide dùng ảnh gốc](../presentation/output/FAP_Attendance_Lab2_AnhGoc_2026-10-22.pptx) và [kịch bản cập nhật](../presentation/output/demo-script.md). Không tự sửa Stitch, không push GitHub.
+
+## 17. Khôi phục prompt gốc và xác nhận của sinh viên — 22/10/2026
+
+- **Xác nhận nguyên văn mới:** “mình dùng nguyên văn các prompt bạn soạn”. Nguồn là lời sinh viên trong cuộc trò chuyện hiện hành, không phải suy đoán từ ảnh. Xem [C03](student-confirmations.md).
+- **Đã truy xuất được:** câu trả lời gốc chứa prompt V1, V2, V2.1, V2.2 và V3 qua `read_thread`, cùng phản biện bốn ảnh V3. Lưu toàn bộ câu trả lời gốc và tách phần prompt, không sửa nội dung. [Source index](evidence/recovered-prompts-2026-10-22/source-index.json) ghi ID turn/message thật; không gán đó là thời điểm sinh viên gửi lên Stitch.
+- **Đầu ra:** [chỉ mục năm prompt và bảng đối chiếu ba vòng chính](evidence/recovered-prompts-2026-10-22/README.md). V2.1/V2.2 vẫn thuộc V2, không đổi thành V3 để đủ số.
+- **Đối chiếu:** V1 sửa tiêu đề/ngữ cảnh tác vụ; V2 sửa lịch sử không trùng và note/P-A; V3 sửa xuất/local/Drive. Bảng liên kết ảnh trước/sau và quyết định thể hiện trong chính prompt đã dùng, không giả chữ ký duyệt sau review.
+- **Xác nhận trước đó được ghi lại:** “checklist ổn hết, 360/412 và accessibility ổn”; “Component/token dùng chung ổn”. Đây là Reported từ sinh viên. Không tiếp tục xem các mục này là sinh viên chưa làm; Codex không tự điền số đo, thời gian, video hoặc tự nhận đã kiểm thử.
+- **Ảnh V3:** đã nhận bốn ảnh trong hội thoại. Kiểm tra lại đúng bốn đường dẫn clipboard: không còn tệp; không tìm thấy bản tương ứng trong attachments theo tên. Chưa thể thêm PNG gốc vào repo, không dựng ảnh mới hoặc dùng simulator thay V3. Đây là khoảng trống khôi phục tệp, không phải thiếu vòng đã thực hiện.
+- **Phạm vi:** không tạo UI, không sửa app Flutter, không đổi prompt/snapshot/manifest ngày 11/10, không sửa slide trong lượt này và không push GitHub. Các cập nhật này là tài liệu local mới.
+
+## 18. Dọn bộ file Lab 2 để sinh viên push — 22/10/2026
+
+- Yêu cầu: “sau đó xóa những file không cần thiết trong src để tôi push lên git”. Phạm vi thực hiện là repo thiết kế `prm323-lab2-SE193324`, không phải xóa mã Flutter của thư mục cha.
+- Chỉ giữ PowerPoint hiện hành `FAP_Attendance_Lab2_AnhGoc_2026-10-22.pptx` và kịch bản. Ba bản PowerPoint cũ, cache/build slide và placeholder trống được chuyển sang thư mục dự phòng `Lab2-cleanup-backup-2026-10-22` nằm ngoài repo.
+- Giữ nguyên ảnh sinh viên, prompt/phản biện gốc, manifest/snapshot ngày 11/10 và bộ prompt khôi phục. Không xóa lịch sử bằng chứng chỉ vì đã có bản UI mới hơn.
+- Bổ sung quy tắc ignore cho đầu ra finalizer/inspection. Sửa liên kết tới slide đã rút để không để tài liệu trỏ vào tệp không còn trong bộ nộp; không đổi nội dung prompt/snapshot lịch sử.
+- Không sửa nội dung PowerPoint, không xóa `.git`, không stage/commit/push. Những file bỏ khỏi repo có bản dự phòng để khôi phục.

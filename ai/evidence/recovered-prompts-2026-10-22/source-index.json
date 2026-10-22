@@ -1,0 +1,71 @@
+{
+  "retrievedOn": "2026-10-22",
+  "tool": "Codex read_thread",
+  "records": [
+    {
+      "version": "v1",
+      "sourceThreadId": "01a09efb-dc1d-7052-862d-e56dc4bc5c4b",
+      "sourceTurnId": "01a12a00-1b72-72b2-92e4-47950746d0e1",
+      "sourceMessageId": "msg_0fd078ad8fe98558016acb43b217c087d08fd1430ab1496728",
+      "sourceStartedAtUtc": "2026-10-11T08:06:52.000Z",
+      "responseFile": "v1-response.txt",
+      "promptFile": "v1-prompt.txt",
+      "extraction": "Remove only code-block/writing-block wrapper; normalize CRLF/LF; preserve prompt text",
+      "usageStatus": "Reported by student: used verbatim. Not a Stitch submission timestamp or exact submission-count verification."
+    },
+    {
+      "version": "v2",
+      "sourceThreadId": "01a09efb-dc1d-7052-862d-e56dc4bc5c4b",
+      "sourceTurnId": "01a12a26-870c-70f3-90b8-756db6ed6736",
+      "sourceMessageId": "msg_0fd078ad8fe98558016acb4d9e566087d09181443f3be8bb8c",
+      "sourceStartedAtUtc": "2026-10-11T08:48:50.000Z",
+      "responseFile": "v2-response.txt",
+      "promptFile": "v2-prompt.txt",
+      "extraction": "Remove only code-block/writing-block wrapper; normalize CRLF/LF; preserve prompt text",
+      "usageStatus": "Reported by student: used verbatim. Not a Stitch submission timestamp or exact submission-count verification."
+    },
+    {
+      "version": "v2-1",
+      "sourceThreadId": "01a09efb-dc1d-7052-862d-e56dc4bc5c4b",
+      "sourceTurnId": "01a12a35-8283-79d3-a351-fc7ec09a5c6d",
+      "sourceMessageId": "msg_0fd078ad8fe98558016acb51606c4487d0b387f4f85a45e95b",
+      "sourceStartedAtUtc": "2026-10-11T09:05:12.000Z",
+      "responseFile": "v2-1-response.txt",
+      "promptFile": "v2-1-prompt.txt",
+      "extraction": "Remove only code-block/writing-block wrapper; normalize CRLF/LF; preserve prompt text",
+      "usageStatus": "Reported by student: used verbatim. Not a Stitch submission timestamp or exact submission-count verification."
+    },
+    {
+      "version": "v2-2",
+      "sourceThreadId": "01a09efb-dc1d-7052-862d-e56dc4bc5c4b",
+      "sourceTurnId": "01a12a52-e5ed-7e10-b7dd-5c91178a76a6",
+      "sourceMessageId": "msg_0fd078ad8fe98558016acb58dc206487d0af67ea3271b1dc56",
+      "sourceStartedAtUtc": "2026-10-11T09:37:18.000Z",
+      "responseFile": "v2-2-response.txt",
+      "promptFile": "v2-2-prompt.txt",
+      "extraction": "Remove only code-block/writing-block wrapper; normalize CRLF/LF; preserve prompt text",
+      "usageStatus": "Reported by student: used verbatim. Not a Stitch submission timestamp or exact submission-count verification."
+    },
+    {
+      "version": "v3",
+      "sourceThreadId": "01a09efb-dc1d-7052-862d-e56dc4bc5c4b",
+      "sourceTurnId": "01a12a5c-0f4c-7c42-a1b6-b2c7a858abe3",
+      "sourceMessageId": "msg_0fd078ad8fe98558016acb5b3ffaec87d0b08b9295203814dc",
+      "sourceStartedAtUtc": "2026-10-11T09:47:18.000Z",
+      "responseFile": "v3-response.txt",
+      "promptFile": "v3-prompt.txt",
+      "extraction": "Remove only code-block/writing-block wrapper; normalize CRLF/LF; preserve prompt text",
+      "usageStatus": "Reported by student: used verbatim. Not a Stitch submission timestamp or exact submission-count verification."
+    }
+  ],
+  "v3Review": {
+    "sourceTurnId": "01a12a60-37ec-7da0-8296-bece1ed987b2",
+    "sourceMessageId": "msg_0fd078ad8fe98558016acb5c65092487d08d0193a6676dabbb",
+    "file": "v3-review-response.txt"
+  },
+  "limits": [
+    "Original replies and extracted prompts only; no newly generated UI.",
+    "Student confirmed verbatim use. No invented tool responses, submission timestamps, measurements or user-research records.",
+    "V2.1/V2.2 are refinements inside V2, not replacements for the distinct V3 iteration."
+  ]
+}
