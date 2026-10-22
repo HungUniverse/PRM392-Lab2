@@ -985,3 +985,11 @@ Không dùng nhận xét sở thích như “tôi thích hơn” làm lý do duy
 - Giữ nguyên ảnh sinh viên, prompt/phản biện gốc, manifest/snapshot ngày 11/10 và bộ prompt khôi phục. Không xóa lịch sử bằng chứng chỉ vì đã có bản UI mới hơn.
 - Bổ sung quy tắc ignore cho đầu ra finalizer/inspection. Sửa liên kết tới slide đã rút để không để tài liệu trỏ vào tệp không còn trong bộ nộp; không đổi nội dung prompt/snapshot lịch sử.
 - Không sửa nội dung PowerPoint, không xóa `.git`, không stage/commit/push. Những file bỏ khỏi repo có bản dự phòng để khôi phục.
+
+## 19. Tìm lại và khôi phục đủ bốn PNG V3 — 22/10/2026
+
+- **Yêu cầu:** “hãy tìm 4 ảnh đó trong hội thoại”. Đã xác định đúng tin nhắn “đây là 4 hình v3” ngày 11/10/2026, 16:51:51 giờ Việt Nam.
+- **Kết quả tìm:** đường dẫn Temp không còn tệp nhưng bản lưu hội thoại vẫn chứa đủ bốn payload `input_image` dạng PNG base64. Nhận định trước đó mới dựa trên đường dẫn/attachments, chưa kiểm tra đủ bản lưu có dữ liệu ảnh.
+- **Khôi phục:** giải mã nguyên dữ liệu PNG vào `assets/stitch/v3-s09-*.png`, không tạo mới hoặc sửa ảnh; đọc lại tệp và đối chiếu từng byte với payload, kiểm tra SHA-256 và xem cả bốn hình. [Nguồn, ảnh và manifest](evidence/recovered-v3-images-2026-10-22/README.md).
+- **Trạng thái mới:** không còn thiếu bộ PNG V3 trong repo local. Cập nhật chỉ mục, bảng vòng lặp và checklist; giữ nguyên prompt/phản biện/snapshot/manifest cũ. Bốn ảnh chủ yếu là trạng thái S09, không đếm thành bốn màn mới hoặc bộ S10 V3 đầy đủ.
+- **Giới hạn:** không sửa các lỗi lịch sử trong ảnh, không tự nhận đã sửa/test prototype; không sửa Flutter, PowerPoint hoặc commit/push GitHub trong lượt này.

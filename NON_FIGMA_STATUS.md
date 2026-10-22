@@ -17,7 +17,7 @@ Chốt phạm vi theo yêu cầu mới: **chỉ dùng màn hình sinh viên đã
 | Mười màn và các trạng thái đã nhận | [Ảnh gốc](design/screen-evidence.md), [đối chiếu](design/state-coverage.md) | Chỉ dùng UI sinh viên gửi; chưa có low-fi riêng |
 | Quy tắc và chín nhóm component/states | [DESIGN](design/DESIGN.md), [C02](ai/student-confirmations.md) | Có đặc tả; component/token được sinh viên xác nhận ổn (Reported), chưa phải kiểm binding của Codex |
 | Accept/Modify/Reject có lý do | [D01–D10](design/design-decisions.md) | Chọn trong đặc tả hiện hành; không giả phê duyệt, chưa xác minh sau áp dụng Stitch |
-| AI process và lưu bằng chứng | [AI log](ai/ai-design-log.md), [iteration matrix](ai/iteration-evidence.md) | Ba mục tiêu riêng; prompt nguyên văn đã khôi phục/xác nhận sử dụng; còn khôi phục PNG V3 |
+| AI process và lưu bằng chứng | [AI log](ai/ai-design-log.md), [iteration matrix](ai/iteration-evidence.md) | Ba mục tiêu riêng; prompt nguyên văn đã khôi phục/xác nhận sử dụng; đủ bốn PNG V3 phục hồi từ hội thoại |
 | Handoff sáu mục/màn, hai mapping | [Handoff](handoff/flutter-handoff.md) | Có đặc tả, tiêu chí S07 và mẫu ghi; chưa có người nhận thử |
 | Kiểm thử và UI checklist | [Validation plan](design/validation-plan.md), [review](design/prototype-review.md), [C01](ai/student-confirmations.md) | Sinh viên xác nhận ổn checklist/360/412/accessibility; Codex chưa chạy lại, chưa có số đo/log riêng |
 | Slide và kịch bản demo | [12 slide dùng ảnh gốc](presentation/output/FAP_Attendance_Lab2_AnhGoc_2026-10-22.pptx), [kịch bản](presentation/output/demo-script.md) | Chỉ dùng màn hình sinh viên gửi; chưa chạy buổi demo thật |
@@ -30,7 +30,7 @@ Chốt phạm vi theo yêu cầu mới: **chỉ dùng màn hình sinh viên đã
 
 ## 3. Phần chưa thể điền thay
 
-1. Prompt V1/V2/V3 đã khôi phục từ hội thoại gốc; không còn thiếu prompt. Còn bộ PNG V3 gốc do tệp clipboard tạm đã mất. Không cần tạo lại màn hoặc phản hồi chữ Stitch nếu lượt đó chỉ trả hình.
+1. Prompt V1/V2/V3 và [bốn PNG V3](ai/evidence/recovered-v3-images-2026-10-22/README.md) đã khôi phục từ hội thoại gốc; không còn khoảng trống tệp PNG V3. Tệp clipboard tạm không còn nhưng bản lưu hội thoại vẫn giữ dữ liệu ảnh. Không cần tạo lại màn hoặc phản hồi chữ Stitch nếu lượt đó chỉ trả hình.
 2. Xác nhận các sai khác R01–R12 trên prototype của sinh viên, thu thập bằng chứng tương tác thực. Nếu chưa có trạng thái hoặc S10 phiên bản mới, giữ nhãn thiếu; không tự tạo màn thay thế trong lượt này.
 3. Ghi nhận sinh viên đã tự kiểm đạt theo C01/C02; bổ sung log hoặc số đo đã có nếu cần minh chứng chi tiết, không yêu cầu làm lại chỉ vì Codex chưa chạy. Không tự đặt số đo hoặc điểm trên 80.
 4. Nghiên cứu người dùng tối thiểu hoặc giữ Assumed rõ; thử handoff với người khác và ghi câu hỏi/retest.

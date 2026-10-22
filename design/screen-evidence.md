@@ -19,6 +19,10 @@ Cập nhật 22/10/2026 theo yêu cầu: chỉ dùng màn hình sinh viên đã 
 
 Sheet và kết quả xuất là biến thể trạng thái, không cộng thành màn chức năng mới. S10 giữ nhãn V1 cũ để không gây hiểu nhầm.
 
+## Bốn ảnh V3 lịch sử đã khôi phục
+
+Ngày 22/10/2026 đã tìm lại dữ liệu ảnh trong tin nhắn “đây là 4 hình v3” ngày 11/10 và phục hồi nguyên PNG: [chặn xuất](../assets/stitch/v3-s09-export-blocked.png), [sẵn sàng xuất](../assets/stitch/v3-s09-export-ready.png), [thành công](../assets/stitch/v3-s09-export-success.png), [local đã lưu / Drive chờ](../assets/stitch/v3-s09-local-saved-drive-pending.png). Xem [nguồn, manifest và giới hạn](../ai/evidence/recovered-v3-images-2026-10-22/README.md). Đây là minh chứng vòng V3, không thay bộ ảnh prototype trong slide hoặc tự tăng số màn chức năng. Giữ nguyên cả lỗi thiết kế để đối chiếu review gốc.
+
 ## Cách sử dụng
 
 - Trình bày đúng nội dung ảnh, nêu sai khác ở [R01–R12](prototype-review.md) thay vì sửa ảnh để che lỗi.

@@ -29,7 +29,7 @@ Xác nhận mới nhất: [C01–C03](ai/student-confirmations.md). Checklist pr
 - [ ] Kiểm chứng các giả định P01 với người phù hợp hoặc giữ nhãn Assumed và ghi giới hạn thực tế; không nhận là người đã phỏng vấn.
 - [ ] Áp dụng D01–D09 vào Stitch; sinh viên xem lại lựa chọn, ghi ảnh sau sửa và kết quả kiểm thử, không giả chữ ký reviewer.
 - [x] [Lưu prompt nguyên văn V1/V2/V2.1/V2.2/V3 và đối chiếu ba mục tiêu](ai/evidence/recovered-prompts-2026-10-22/README.md); sinh viên xác nhận sử dụng nguyên văn.
-- [ ] Khôi phục bộ PNG V3 gốc vào repo; ảnh đã gửi trong hội thoại nhưng tệp clipboard tạm đã mất. Không tạo ảnh thay thế hoặc yêu cầu làm lại vòng V3.
+- [x] [Khôi phục đủ bốn PNG V3](ai/evidence/recovered-v3-images-2026-10-22/README.md) từ dữ liệu ảnh đính kèm trong bản lưu hội thoại; kiểm tra byte/checksum, không tạo ảnh thay thế hoặc yêu cầu làm lại vòng V3.
 - [ ] Đối chiếu UI cuối với đặc tả và bằng chứng đã có; low-fi riêng vẫn ghi thiếu nếu chưa được cung cấp.
 - [ ] Bổ sung ảnh S10 mới và bằng chứng sau Save/Cancel, sau chốt, lý do trống/audit mới, loading/error/recovery.
 - [ ] Xác nhận JSON xuất phù hợp schema extension; nhãn trong prototype chưa chứng minh tích hợp được.

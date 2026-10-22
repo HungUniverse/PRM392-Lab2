@@ -1,0 +1,59 @@
+{
+  "recoveredOn": "2026-10-22",
+  "method": "Decode original input_image data:image/png;base64 payloads; no image transformation or regeneration",
+  "source": {
+    "threadId": "01a09efb-dc1d-7052-862d-e56dc4bc5c4b",
+    "turnId": "01a12a60-37ec-7da0-8296-bece1ed987b2",
+    "readThreadUserMessageId": "01a12a60-384e-7dd3-bf11-1582e299c887",
+    "rolloutPayloadMessageId": "msg_01a12a60-384e-7dd3-bf11-157500b27866",
+    "userText": "đây là 4 hình v3",
+    "timestampUtc": "2026-10-11T09:51:51.375Z",
+    "rolloutFile": "rollout-2026-09-20T18-25-24-01a09efb-dc1d-7052-862d-e56dc4bc5c4b_01a0be90-5129-7e60-b888-98caeba76f1b.jsonl",
+    "rolloutLineOneBased": 2631
+  },
+  "files": [
+    {
+      "imageOrder": 1,
+      "originalFilename": "codex-clipboard-7c671706-b7c3-4f75-8b46-c07d3e479ef1.png",
+      "repoPath": "assets/stitch/v3-s09-export-blocked.png",
+      "bytes": 108631,
+      "width": 404,
+      "height": 1118,
+      "sha256": "7189b26dc32c8202868a644a72a1ea9c51bc29cf928bd0d776d41f6fd0b3e889"
+    },
+    {
+      "imageOrder": 2,
+      "originalFilename": "codex-clipboard-681ba382-4160-4e8f-b81b-a31737ceeb5a.png",
+      "repoPath": "assets/stitch/v3-s09-export-ready.png",
+      "bytes": 110429,
+      "width": 400,
+      "height": 1216,
+      "sha256": "de9930ca7bbe169a3b5da0231edb3907516c9c1cd5a7f2a960ee60ec50ed0432"
+    },
+    {
+      "imageOrder": 3,
+      "originalFilename": "codex-clipboard-5f537cb4-796f-45a1-bee8-c8f6f3ad9112.png",
+      "repoPath": "assets/stitch/v3-s09-export-success.png",
+      "bytes": 102684,
+      "width": 402,
+      "height": 1100,
+      "sha256": "a9daf320766ed6c34b409fee6f41a1a61c46f65f2e475436be84e6eaaf42d14b"
+    },
+    {
+      "imageOrder": 4,
+      "originalFilename": "codex-clipboard-87a67002-615b-4108-aa5b-8d08c5df1bd3.png",
+      "repoPath": "assets/stitch/v3-s09-local-saved-drive-pending.png",
+      "bytes": 148370,
+      "width": 402,
+      "height": 954,
+      "sha256": "29d25f96c722f48dd452a52e0a2323b8cb0da00f4cb1b7f2da36c3dac7516e23"
+    }
+  ],
+  "verification": {
+    "decodedPayloadEqualsRecoveredFile": true,
+    "visualInspectionOfAllFour": true,
+    "originalTempFilesAvailableForSeparateComparison": false,
+    "imageEdits": false,
+    "githubPushPerformed": false
+  }
+}
