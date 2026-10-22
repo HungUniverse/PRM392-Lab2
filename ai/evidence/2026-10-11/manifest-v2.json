@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "studentId": "SE193324",
+  "recordedDate": "2026-10-11",
+  "timezone": "Asia/Saigon",
+  "reviewId": "REVIEW-CODEX-V2-01",
+  "reviewType": "static-image-review",
+  "evidenceType": "byte-identical-copies-of-user-attached-ui-images",
+  "originalChatCaptured": false,
+  "imagesEdited": false,
+  "stitchPromptSentVerbatimVerified": false,
+  "stitchPromptCountVerified": false,
+  "improvementIterationCompletionVerified": false,
+  "studentDecisionsFinalized": false,
+  "screensProvided": [
+    "S04",
+    "S05",
+    "S07"
+  ],
+  "imageCount": 7,
+  "mainScreenCount": 3,
+  "missingRequestedV2Evidence": [
+    "S08_History",
+    "S08_SlotResults",
+    "S07_Saving",
+    "S07_SaveSuccess",
+    "S07_SaveError"
+  ],
+  "additionalEvidenceGap": "S06 current-version QR screen not provided; absence of an image is not proof of absent functionality.",
+  "images": [
+    {
+      "attachmentOrder": 1,
+      "screenId": "S04",
+      "state": "attendance-active",
+      "source": "C:/Users/lenovo/AppData/Local/Temp/codex-clipboard-b0e8942d-7a9d-4988-a057-53fa55846229.png",
+      "file": "assets/stitch/v2-s04-attendance.png",
+      "sha256": "5500390f1aa4c0ee651eff817ce00e5e8b40cca2362b45da7fd924470a271673",
+      "byteIdenticalToSource": true
+    },
+    {
+      "attachmentOrder": 2,
+      "screenId": "S04",
+      "state": "preparation",
+      "source": "C:/Users/lenovo/AppData/Local/Temp/codex-clipboard-095cdabf-e992-4b5c-8840-dd73e18e3657.png",
+      "file": "assets/stitch/v2-s04-preparation.png",
+      "sha256": "87219e0ae9434608a63d10a2012f1d6ee911d21622df3f34700105249dd56393",
+      "byteIdenticalToSource": true
+    },
+    {
+      "attachmentOrder": 3,
+      "screenId": "S05",
+      "state": "schedule-editable",
+      "source": "C:/Users/lenovo/AppData/Local/Temp/codex-clipboard-26aaabf8-e90c-4f7f-a2da-cacfd739add9.png",
+      "file": "assets/stitch/v2-s05-schedule-editable.png",
+      "sha256": "7d7bd139a728b7412c024c14e659b324964df3e70b0a7da34682bafdc32bfbe5",
+      "byteIdenticalToSource": true
+    },
+    {
+      "attachmentOrder": 4,
+      "screenId": "S05",
+      "state": "schedule-locked",
+      "source": "C:/Users/lenovo/AppData/Local/Temp/codex-clipboard-12fa6fb1-718e-4a6e-8678-b6cd61274d93.png",
+      "file": "assets/stitch/v2-s05-schedule-locked.png",
+      "sha256": "10f574a27bcb63b047ec929eeeba386f58a05777cfdec1f6f22aca20ce6f22ff",
+      "byteIdenticalToSource": true
+    },
+    {
+      "attachmentOrder": 5,
+      "screenId": "S07",
+      "state": "note-view",
+      "source": "C:/Users/lenovo/AppData/Local/Temp/codex-clipboard-272a76c9-d05c-408a-af1b-84ecd81e2df3.png",
+      "file": "assets/stitch/v2-s07-note.png",
+      "sha256": "c298fb489d6a66d7e54918af7116937c29c4e7cd1edf7875472020135b456cc5",
+      "byteIdenticalToSource": true
+    },
+    {
+      "attachmentOrder": 6,
+      "screenId": "S07",
+      "state": "edit-empty-reason-error",
+      "source": "C:/Users/lenovo/AppData/Local/Temp/codex-clipboard-43e7ac73-5045-4378-9042-45f57c49a1dc.png",
+      "file": "assets/stitch/v2-s07-edit-error.png",
+      "sha256": "c1070ef1bf7ccb3a64b8895c41d52f7e9247d80d5b8ba01e18816faad1dff012",
+      "byteIdenticalToSource": true
+    },
+    {
+      "attachmentOrder": 7,
+      "screenId": "S07",
+      "state": "student-detail",
+      "source": "C:/Users/lenovo/AppData/Local/Temp/codex-clipboard-c3f047c2-a1f9-4c92-a12a-f02c57dc4733.png",
+      "file": "assets/stitch/v2-s07-student.png",
+      "sha256": "4d51922b6f83fbde4e6e95908c8a39885624c8e8f6ef9de8b84b0d1cb2190ebe",
+      "byteIdenticalToSource": true
+    }
+  ],
+  "documents": [
+    {
+      "file": "ai/evidence/2026-10-11/09-v2-review-request.md",
+      "sha256": "fc287cf83a9a2ebbc9574241e510662033bb2fd93484230d96853180f32dfd4e"
+    },
+    {
+      "file": "ai/evidence/2026-10-11/09-v2-review.md",
+      "sha256": "d36f170bad1eae1877603215367d2caafff0fdf6c194d3908a3f5f88f38eb5f5"
+    },
+    {
+      "file": "ai/evidence/2026-10-11/README-v2.md",
+      "sha256": "b085d59c96a862f8c44cc94dc958d06ba0a4034c6f9d8b067828fb8d1bcd4ad0"
+    }
+  ],
+  "preservedExistingImages": [
+    {
+      "file": "assets/stitch/Tổng quan.png",
+      "sha256": "0269af19c392ec18cbd942ad8f27d02adab5e0154c706ecee67efe97a82a99fe"
+    },
+    {
+      "file": "assets/stitch/v0-s01-workspace.png",
+      "sha256": "2386a82a1a00750431bd5fd527cb3792c46523ef159aa8cff0dad86e5575771d"
+    },
+    {
+      "file": "assets/stitch/v0-s02-timetable.png",
+      "sha256": "8e56659356f5172d87c48f0787bd32ffcadf72d832775764978567bfc6e7c3a4"
+    },
+    {
+      "file": "assets/stitch/v0-s03-import.png",
+      "sha256": "4fdfe79dcc5a9aaa70d24f991638fc2578d60f0fbc781bf61f73afb1daf4b22d"
+    },
+    {
+      "file": "assets/stitch/v0-s04-attendance.png",
+      "sha256": "95abb5548467e3b1ba046d222fc2aa5014ffd64ec9692ef039dcbfa38232c3e9"
+    },
+    {
+      "file": "assets/stitch/v0-s05-schedule.png",
+      "sha256": "9679f1c68f8d735f94ea19ea811d73d3ba90fa9a70c8351dfd52c6831a665f20"
+    },
+    {
+      "file": "assets/stitch/v0-s06-qr.png",
+      "sha256": "f953aa3fbe6518fa53f0da96ebd56684685cee1daa08d8c11eb66f7ae8ec8f36"
+    },
+    {
+      "file": "assets/stitch/v0-s07-student.png",
+      "sha256": "06e201ea413f88ae9acc4ab5b334a732592c3e0c93b0c72ede4c3c789a42cec9"
+    },
+    {
+      "file": "assets/stitch/v0-s08-history.png",
+      "sha256": "fd2f0a429a83e4bd9f96d4cacaacbf9e9f35c3d4b2c2f84ca99fd6aaa6cea5c9"
+    },
+    {
+      "file": "assets/stitch/v0-s09-export.png",
+      "sha256": "0002bd213858cd86eca3a60c09cebf842c91dd8d445cf88b9176bb708c87f430"
+    },
+    {
+      "file": "assets/stitch/v0-s10-drive.png",
+      "sha256": "d4e7c5e421fb147ef6cf3504a7f79c5dc1be3d8e71a6d76adff9bfa09ed563a5"
+    },
+    {
+      "file": "assets/stitch/v1-s01-workspace.png",
+      "sha256": "a0b675510a61232949cb71e7494e849b1f2de91a95397f4c3dbb934dee3760f7"
+    },
+    {
+      "file": "assets/stitch/v1-s02-timetable.png",
+      "sha256": "c7c5bf24fa8a50e2ab4727488176ae1243691543a63ee23af25a2b9a0fbe136f"
+    },
+    {
+      "file": "assets/stitch/v1-s03-import.png",
+      "sha256": "9c4d58c8be31f6a6005baf979a5e80898faf19489ebcd289ddaf09e151ad52e7"
+    },
+    {
+      "file": "assets/stitch/v1-s04-attendance.png",
+      "sha256": "76a9689f621f5fe935920470b37965a5bffd161d026c998d97035fde3d92cb63"
+    },
+    {
+      "file": "assets/stitch/v1-s05-schedule.png",
+      "sha256": "092763428c50c7c7194922463852523111e4f46fcbfad7eb5863a432f430ad45"
+    },
+    {
+      "file": "assets/stitch/v1-s07-student.png",
+      "sha256": "7b6675ff23a92a43d07bf5713aec30be6ca054d4af893b5989e6bb07f44b6319"
+    },
+    {
+      "file": "assets/stitch/v1-s08-history.png",
+      "sha256": "717a74095419dff4ff1c04a2443f6ddb21ed389e87189069e0c04ef611521511"
+    },
+    {
+      "file": "assets/stitch/v1-s09-export.png",
+      "sha256": "1ee9821f4b4b35f1b16292c788240145b9d3e22b0e5f9c4d3876bac74e8f92b3"
+    },
+    {
+      "file": "assets/stitch/v1-s10-drive.png",
+      "sha256": "fc1dc118a04850ddbd06b4182642eea7301a5225b38d335897c2fd7e786127d4"
+    }
+  ],
+  "checks": {
+    "allSevenImagesVisuallyInspected": true,
+    "allCopiesHashComparedToSources": true,
+    "existingV0V1ImageHashesUnchanged": true,
+    "calendarCheck": {
+      "startDate": "2026-09-28",
+      "weekdays": [
+        "Monday",
+        "Thursday"
+      ],
+      "meetingCount": 20,
+      "lastMeetingWithoutExceptions": "2026-12-03",
+      "holidayShown": "2026-10-10 Saturday",
+      "makeupShown": "2026-10-11 Sunday"
+    }
+  },
+  "disclosure": "PNG copies retain the original submitted UI, including defects. Hashes verify saved files only, not tool origin, creation time, prompt submission, or interaction behavior."
+}

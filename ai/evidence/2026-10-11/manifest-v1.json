@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "studentId": "SE193324",
+  "recordedDate": "2026-10-11",
+  "timezone": "Asia/Saigon",
+  "evidenceType": "rendered-content-archive-not-original-chat-screenshot",
+  "originalChatCaptured": false,
+  "critiqueTool": "Codex",
+  "critiqueType": "static-image-review",
+  "disclosure": "PNG screenshots of a locally rendered content archive; not original ChatGPT/Stitch conversation screenshots. Hashes verify these saved files only, not their original time or delivery.",
+  "sources": [
+    {
+      "file": "08-v1-critique-prompt.md",
+      "sha256": "da6bbe3b59f311d5614a231aee6829795c33673c81163315fa18b19a7380b792",
+      "role": "Người dùng → Codex · Nội dung từ tệp dán",
+      "title": "Yêu cầu phản biện V1",
+      "pages": 5,
+      "screenshots": [
+        "assets/ai/2026-10-11/08-v1-critique-prompt/page-01.png",
+        "assets/ai/2026-10-11/08-v1-critique-prompt/page-02.png",
+        "assets/ai/2026-10-11/08-v1-critique-prompt/page-03.png",
+        "assets/ai/2026-10-11/08-v1-critique-prompt/page-04.png",
+        "assets/ai/2026-10-11/08-v1-critique-prompt/page-05.png"
+      ],
+      "textPreserved": true
+    },
+    {
+      "file": "08-v1-critique-response.md",
+      "sha256": "ede83c7858b63160e70fc0dcb328a90fe6c9e46dd2a1e90e91d28c581eb8e268",
+      "role": "Codex → Người dùng · 9 ảnh V1; thiếu S06 V1; chưa kiểm thử",
+      "title": "Phản biện V1 · 9 phát hiện",
+      "pages": 7,
+      "screenshots": [
+        "assets/ai/2026-10-11/08-v1-critique-response/page-01.png",
+        "assets/ai/2026-10-11/08-v1-critique-response/page-02.png",
+        "assets/ai/2026-10-11/08-v1-critique-response/page-03.png",
+        "assets/ai/2026-10-11/08-v1-critique-response/page-04.png",
+        "assets/ai/2026-10-11/08-v1-critique-response/page-05.png",
+        "assets/ai/2026-10-11/08-v1-critique-response/page-06.png",
+        "assets/ai/2026-10-11/08-v1-critique-response/page-07.png"
+      ],
+      "textPreserved": true
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-prompt/page-01.png",
+      "sha256": "2f862c9e3c4e2342d3f78ef87169892e7eb59cac8b7601e5455148b53b3e76e9",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-prompt.md",
+      "page": 1
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-prompt/page-02.png",
+      "sha256": "46012f7e459ed1762793d3cbce2e9c1569056f0b9d55e01c17eab1773a9d9d67",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-prompt.md",
+      "page": 2
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-prompt/page-03.png",
+      "sha256": "17f565f5f517e1188f896e591c261764266d608fc403e5a6110e3d95bdd0acb5",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-prompt.md",
+      "page": 3
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-prompt/page-04.png",
+      "sha256": "af907e2d747508698148ac6a4c79bafc374461952fb90df56656c1e73089f707",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-prompt.md",
+      "page": 4
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-prompt/page-05.png",
+      "sha256": "44bc6ea8aa04c77cb6d764e9270cfe2f3879971d46be984442af205afb7bd0b6",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-prompt.md",
+      "page": 5
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-response/page-01.png",
+      "sha256": "6949fd4e22bfb38e146ec5bcd31f0a5b8f9398114ff072f38572563d3c1fddd6",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-response.md",
+      "page": 1
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-response/page-02.png",
+      "sha256": "84195aa3cf5ce119c75b79da4ecf58571ae49ae97fb6c73bc75132ae1bc9809a",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-response.md",
+      "page": 2
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-response/page-03.png",
+      "sha256": "b59e25448daa0bfeaaf53d6f92f3b3568c88ea1971905bfa9eb158a1831a1efd",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-response.md",
+      "page": 3
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-response/page-04.png",
+      "sha256": "be4fc03b97ab6dbe53ce7b14ee89afeb4b657459e97b2713edd04df238c65086",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-response.md",
+      "page": 4
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-response/page-05.png",
+      "sha256": "168b079db96ac0a650ed1f5a42d02d1c9fccd76761e2237c8c6bf6f58d01ad7b",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-response.md",
+      "page": 5
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-response/page-06.png",
+      "sha256": "d7a986ae71e3d958aedbe3648a810d7c0b4704f9943fb388f43be6e1c9274461",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-response.md",
+      "page": 6
+    },
+    {
+      "file": "assets/ai/2026-10-11/08-v1-critique-response/page-07.png",
+      "sha256": "d403a6321cdbf60f3711f6804f91ea0e0213b6c30603e0ef6c040d268c3e3488",
+      "width": 1080,
+      "height": 1520,
+      "source": "08-v1-critique-response.md",
+      "page": 7
+    }
+  ],
+  "reviewId": "CRITIQUE-CODEX-V1-01",
+  "stitchV1": [
+    {
+      "file": "assets/stitch/v1-s01-workspace.png",
+      "sha256": "a0b675510a61232949cb71e7494e849b1f2de91a95397f4c3dbb934dee3760f7"
+    },
+    {
+      "file": "assets/stitch/v1-s02-timetable.png",
+      "sha256": "c7c5bf24fa8a50e2ab4727488176ae1243691543a63ee23af25a2b9a0fbe136f"
+    },
+    {
+      "file": "assets/stitch/v1-s03-import.png",
+      "sha256": "9c4d58c8be31f6a6005baf979a5e80898faf19489ebcd289ddaf09e151ad52e7"
+    },
+    {
+      "file": "assets/stitch/v1-s04-attendance.png",
+      "sha256": "76a9689f621f5fe935920470b37965a5bffd161d026c998d97035fde3d92cb63"
+    },
+    {
+      "file": "assets/stitch/v1-s05-schedule.png",
+      "sha256": "092763428c50c7c7194922463852523111e4f46fcbfad7eb5863a432f430ad45"
+    },
+    {
+      "file": "assets/stitch/v1-s07-student.png",
+      "sha256": "7b6675ff23a92a43d07bf5713aec30be6ca054d4af893b5989e6bb07f44b6319"
+    },
+    {
+      "file": "assets/stitch/v1-s08-history.png",
+      "sha256": "717a74095419dff4ff1c04a2443f6ddb21ed389e87189069e0c04ef611521511"
+    },
+    {
+      "file": "assets/stitch/v1-s09-export.png",
+      "sha256": "1ee9821f4b4b35f1b16292c788240145b9d3e22b0e5f9c4d3876bac74e8f92b3"
+    },
+    {
+      "file": "assets/stitch/v1-s10-drive.png",
+      "sha256": "fc1dc118a04850ddbd06b4182642eea7301a5225b38d335897c2fd7e786127d4"
+    }
+  ],
+  "missingScreens": [
+    "S06"
+  ],
+  "stitchV1PromptProvided": false,
+  "stitchV1TextResponseProvided": false,
+  "improvementIterationCompletionVerified": false,
+  "studentDecisionsFinalized": false,
+  "reviewDoesNotCountAsCompletedImprovement": true,
+  "inputDocuments": [
+    {
+      "file": "ai/evidence/2026-10-11/v1-inputs/DESIGN.md",
+      "sha256": "95d4d495fe8b30c63227946dd3be80aa0858b6d39ef2f605758ce9e6371bbdd9"
+    },
+    {
+      "file": "ai/evidence/2026-10-11/v1-inputs/persona.md",
+      "sha256": "c150d875d945bd855185fc08bca47149bf56c90bbcfdb8503b0e2d2a9db59d89"
+    },
+    {
+      "file": "ai/evidence/2026-10-11/v1-inputs/user-flow.md",
+      "sha256": "033ab5abc306f583fbaa9393a242bedf267f0d00afa79503fca86dfb4558d281"
+    }
+  ],
+  "originalPrompt": {
+    "path": "C:/Users/lenovo/.codex/attachments/27ef2e40-009b-4110-9dc7-350237d8e946/Pasted text.txt",
+    "sha256": "534a2ae405cebf29f9ac2376edf111e77d896dacbac42caab809a12170337c6f",
+    "comparison": "equal content after CRLF/LF and trailing-newline normalization"
+  }
+}

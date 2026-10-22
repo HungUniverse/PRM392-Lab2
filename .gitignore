@@ -1,0 +1,21 @@
+# Local authoring caches and generated intermediates (at any depth)
+.build/
+node_modules/
+.cache/
+__pycache__/
+*.pyc
+*.log
+*.tmp
+*.bak
+~$*
+.DS_Store
+Thumbs.db
+
+# Credentials and private local data; do not ignore design evidence JSON/PNG/PPTX
+.env
+.env.*
+!.env.example
+credentials.json
+client_secret*.json
+token.json
+private/

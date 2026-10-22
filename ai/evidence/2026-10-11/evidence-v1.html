@@ -1,0 +1,269 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Bản lưu bằng chứng AI — SE193324 — V1</title><style>
+    *{box-sizing:border-box}body{margin:0;background:#e8ebef;color:#243047;font:18px/1.5 Arial,sans-serif}
+    .page{width:1080px;height:1520px;margin:32px auto;background:white;padding:34px 42px;display:flex;flex-direction:column;break-after:page}
+    header{flex:none;border-bottom:2px solid #c93c13;padding-bottom:14px;margin-bottom:20px}
+    .eyebrow{font-size:13px;font-weight:bold;letter-spacing:.8px;color:#c93c13}
+    h1{font-size:28px;line-height:1.2;margin:8px 0}header p{font-size:15px;margin:5px 0}
+    .disclosure{padding:9px 12px;background:#fff0e8;border-left:4px solid #c93c13;font-size:14px}
+    main{flex:1;min-height:0;overflow:visible}footer{flex:none;border-top:1px solid #cbd2dc;padding-top:12px;margin-top:16px;font-size:12px;color:#526070;display:flex;justify-content:space-between}
+    main h1{font-size:25px}h2{font-size:23px;line-height:1.3;margin:18px 0 10px}h3{font-size:20px;margin:16px 0 8px}
+    p{margin:0 0 14px}ul,ol{margin:0 0 16px;padding-left:28px}li{margin:0 0 8px}li p{margin:0}
+    strong{font-weight:700}a{color:#195b9e;overflow-wrap:anywhere}code{font:16px/1.5 Consolas,monospace;background:#f2f4f7;padding:1px 4px;overflow-wrap:anywhere}
+    pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f6f8;padding:12px;font:16px/1.5 Consolas,monospace;margin:0 0 14px}pre code{padding:0;background:transparent}
+    table{width:100%;border-collapse:collapse;margin:14px 0;font-size:16px}td,th{border:1px solid #cbd2dc;padding:8px;text-align:left;vertical-align:top}th{background:#fff0e8}
+    .prompt-line{font:17px/1.4 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;min-height:12px;margin:0;padding:0}
+    .measure{position:absolute;left:-20000px;top:0;visibility:hidden}.cover{margin:32px auto;width:1080px;background:#fff;padding:40px}.cover h2{margin:16px 0}
+    @media print{body{background:white}.page{margin:0}.cover{display:none}}
+  </style></head><body><section class="cover"><h1>Bằng chứng AI · FAP Attendance Mobile · Phản biện V1</h1><p>SE193324 · Bản lưu nội dung ngày 11/10/2026 (Asia/Saigon).</p><p class="disclosure">Các trang dưới đây là bản trình bày lại từ Markdown đã lưu, không phải ảnh chụp giao diện chat ChatGPT hoặc Stitch. Không giả lập giao diện công cụ.</p><p>V1: đã nhận 9 ảnh, thiếu S06. Đã phản biện ảnh tĩnh; chưa sửa UI trong lượt đánh giá. Chưa xác minh hoàn tất vòng cải tiến; V2/V3 chưa có bằng chứng.</p><ul><li>Yêu cầu phản biện V1 — 5 trang</li><li>Phản biện V1 · 9 phát hiện — 7 trang</li></ul></section><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Yêu cầu phản biện V1</h1><p>Người dùng → Codex · Nội dung từ tệp dán</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><div class="prompt-line">Bạn là chuyên gia đánh giá UI/UX mobile.</div><div class="prompt-line">​</div><div class="prompt-line">Hãy phản biện phiên bản V1 của ứng dụng FAP Attendance dành cho</div><div class="prompt-line">giảng viên Trường Đại học FPT, dựa trên các ảnh được cung cấp.</div><div class="prompt-line">​</div><div class="prompt-line">Trong lượt này CHỈ ĐÁNH GIÁ, chưa chỉnh sửa hoặc sinh lại giao diện.</div><div class="prompt-line">​</div><div class="prompt-line">==================================================</div><div class="prompt-line">1. ĐẦU VÀO VÀ PHẠM VI</div><div class="prompt-line">==================================================</div><div class="prompt-line">​</div><div class="prompt-line">Các ảnh V1:</div><div class="prompt-line">- S01: Bắt đầu workspace.</div><div class="prompt-line">- S02: Dashboard / thời khóa biểu tuần.</div><div class="prompt-line">- S03: Import markbook.</div><div class="prompt-line">- S04: Điểm danh lớp.</div><div class="prompt-line">- S05: Cấu hình lịch lớp.</div><div class="prompt-line">- S07: Chi tiết sinh viên.</div><div class="prompt-line">- S08: Lịch sử điểm danh lớp.</div><div class="prompt-line">- S09: Xuất kết quả.</div><div class="prompt-line">- S10: Google Drive và đồng bộ.</div><div class="prompt-line">​</div><div class="prompt-line">Chưa có ảnh S06 V1 được cung cấp trong bộ này.</div><div class="prompt-line">Nếu có ảnh S06 V0 đính kèm, chỉ dùng làm tham khảo và ghi rõ</div><div class="prompt-line">phiên bản; không khẳng định S06 V1 đã hoàn thiện.</div><div class="prompt-line">​</div><div class="prompt-line">Nếu có ảnh V0 hoặc bản phản biện V0, hãy đối chiếu với V1.</div><div class="prompt-line">Nếu không có bằng chứng V0, chỉ đánh giá V1, không tự suy diễn</div><div class="prompt-line">rằng vấn đề đã được sửa.</div><div class="prompt-line">​</div><div class="prompt-line">Nếu được cung cấp persona.md, DESIGN.md và user-flow.md,</div><div class="prompt-line">hãy đọc trước khi đánh giá. Khi tài liệu và yêu cầu gần nhất</div><div class="prompt-line">mâu thuẫn, nêu rõ mâu thuẫn, không tự quyết định thay người dùng.</div><div class="prompt-line">​</div><div class="prompt-line">==================================================</div><div class="prompt-line">2. PERSONA VÀ BỐI CẢNH</div><div class="prompt-line">==================================================</div><div class="prompt-line">​</div><div class="prompt-line">Người dùng là giảng viên Trường Đại học FPT:</div><div class="prompt-line">- Quản lý nhiều lớp trong học kỳ.</div><div class="prompt-line">- Cần thao tác nhanh trước và trong giờ học.</div><div class="prompt-line">- Sử dụng điện thoại theo chiều dọc.</div><div class="prompt-line">- Cần xác nhận đúng môn, lớp, ngày và lần học.</div><div class="prompt-line">- Có thể gặp mạng không ổn định.</div><div class="prompt-line">- Cần biết kết quả đã lưu local hay đã đồng bộ.</div><div class="prompt-line">- Cần xem đầy đủ họ tên, sửa sai có lý do và kiểm tra ghi chú.</div><div class="prompt-line">​</div><div class="prompt-line">Không tự đặt tên, tuổi hoặc tạo kết quả phỏng vấn cho persona.</div><div class="prompt-line">​</div><div class="prompt-line">==================================================</div><div class="prompt-line">3. TIÊU CHÍ ĐÁNH GIÁ</div></main><footer><span>Nguồn: 08-v1-critique-prompt.md</span><span class="page-number">Trang 1/5</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Yêu cầu phản biện V1</h1><p>Người dùng → Codex · Nội dung từ tệp dán</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><div class="prompt-line">==================================================</div><div class="prompt-line">​</div><div class="prompt-line">Đánh giá theo cả bốn nhóm:</div><div class="prompt-line">​</div><div class="prompt-line">A. Phù hợp persona và tác vụ thực tế.</div><div class="prompt-line">​</div><div class="prompt-line">B. Đúng nghiệp vụ FAP Attendance.</div><div class="prompt-line">​</div><div class="prompt-line">C. 10 nguyên tắc usability của Nielsen:</div><div class="prompt-line">H1 — Visibility of system status.</div><div class="prompt-line">H2 — Match between system and the real world.</div><div class="prompt-line">H3 — User control and freedom.</div><div class="prompt-line">H4 — Consistency and standards.</div><div class="prompt-line">H5 — Error prevention.</div><div class="prompt-line">H6 — Recognition rather than recall.</div><div class="prompt-line">H7 — Flexibility and efficiency of use.</div><div class="prompt-line">H8 — Aesthetic and minimalist design.</div><div class="prompt-line">H9 — Help users recognize, diagnose and recover from errors.</div><div class="prompt-line">H10 — Help and documentation.</div><div class="prompt-line">​</div><div class="prompt-line">Không cố gán lỗi cho đủ 10 nguyên tắc nếu ảnh không có bằng chứng.</div><div class="prompt-line">​</div><div class="prompt-line">D. Accessibility:</div><div class="prompt-line">- Tương phản chữ thường tối thiểu 4.5:1.</div><div class="prompt-line">- Mục tiêu thiết kế của project: body ưu tiên 16,</div><div class="prompt-line">  nội dung phụ không dưới 14 và vùng chạm tối thiểu 48 × 48.</div><div class="prompt-line">- Label rõ ràng, nội dung không bị cắt.</div><div class="prompt-line">- Không chỉ dựa vào màu để phân biệt trạng thái.</div><div class="prompt-line">- Họ tên dài, chữ phóng lớn, cuộn và bàn phím.</div><div class="prompt-line">​</div><div class="prompt-line">Nếu không đo được từ ảnh, ghi “cần kiểm tra trong Figma/prototype”.</div><div class="prompt-line">Không suy kích thước font hoặc vùng chạm thực từ kích thước ảnh</div><div class="prompt-line">đã bị thu nhỏ.</div><div class="prompt-line">​</div><div class="prompt-line">==================================================</div><div class="prompt-line">4. QUY TẮC NGHIỆP VỤ CẦN ĐỐI CHIẾU</div><div class="prompt-line">==================================================</div><div class="prompt-line">​</div><div class="prompt-line">- Email giảng viên ở S01 dùng nhận diện workspace,</div><div class="prompt-line">  không chứng minh đã xác thực đăng nhập.</div><div class="prompt-line">- Không tự giới hạn domain email nếu yêu cầu không quy định.</div><div class="prompt-line">- Import ODS/XLSX cập nhật roster, giữ lịch sử và lịch riêng.</div><div class="prompt-line">- Không tự xóa lớp hoặc sinh viên thiếu trong file import mới.</div><div class="prompt-line">​</div><div class="prompt-line">- Thời khóa biểu gồm thứ Hai đến Chủ nhật và bốn slot:</div><div class="prompt-line">  Slot 1: 07:00–09:15.</div><div class="prompt-line">  Slot 2: 09:30–11:45.</div><div class="prompt-line">  Slot 3: 12:30–14:45.</div><div class="prompt-line">  Slot 4: 15:00–17:15.</div><div class="prompt-line">- Phân biệt slot trong ngày với thứ tự lần học trong học kỳ.</div><div class="prompt-line">- Ngày, thứ, giờ và meeting phải nhất quán giữa các màn hình.</div></main><footer><span>Nguồn: 08-v1-critique-prompt.md</span><span class="page-number">Trang 2/5</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Yêu cầu phản biện V1</h1><p>Người dùng → Codex · Nội dung từ tệp dán</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><div class="prompt-line">- Nếu dùng ngày demo 24/09/2026, đó là thứ Năm,</div><div class="prompt-line">  thuộc tuần 21/09–27/09/2026.</div><div class="prompt-line">- Nhãn “Hôm nay” phải nhất quán trong kịch bản demo.</div><div class="prompt-line">- Không tự thêm phòng học, chính sách vắng hoặc dữ liệu ngoài nguồn.</div><div class="prompt-line">​</div><div class="prompt-line">- Mỗi lớp cấu hình riêng số tuần và 1 hoặc 2 slot mỗi tuần.</div><div class="prompt-line">- Theo phiên bản hiện tại, không sửa lịch khi lớp đã có</div><div class="prompt-line">  slot đang điểm danh hoặc đã chốt.</div><div class="prompt-line">- Ngày nghỉ/học bù phải phù hợp lịch meeting thực tế.</div><div class="prompt-line">​</div><div class="prompt-line">- Chỉ có P và A; slot tương lai chưa ghi nhận để trống.</div><div class="prompt-line">- Qua ngày, phần chưa có kết quả chuyển A, giữ nguyên P đã có.</div><div class="prompt-line">- Chốt danh sách bổ sung A cho phần chưa ghi nhận.</div><div class="prompt-line">- Sửa sau chốt bắt buộc có lý do, lưu note và audit.</div><div class="prompt-line">- Qua ngày vẫn phải xem được note.</div><div class="prompt-line">- Tỷ lệ vắng = số A / tổng meeting đã lên lịch.</div><div class="prompt-line">​</div><div class="prompt-line">- QR đổi mỗi 15 giây.</div><div class="prompt-line">- Mã bí mật cố định trong một lần bật chế độ.</div><div class="prompt-line">- Hai phút là thời hạn của từng lượt sinh viên,</div><div class="prompt-line">  không phải tự chốt cả lớp.</div><div class="prompt-line">- Chốt thành công trở về đúng lớp/meeting.</div><div class="prompt-line">- Không khẳng định QR tiếp tục nhận khi rời màn hình</div><div class="prompt-line">  nếu luồng hiện tại không hỗ trợ.</div><div class="prompt-line">​</div><div class="prompt-line">- Chỉ xuất một lớp/một meeting đã chốt và đủ P/A.</div><div class="prompt-line">- JSON phục vụ Chrome Extension; CSV trao đổi dữ liệu.</div><div class="prompt-line">- Không khẳng định CSV được FAP hỗ trợ import trực tiếp.</div><div class="prompt-line">- Local-first, không database; Drive là tùy chọn.</div><div class="prompt-line">- Đang đồng bộ phải ngăn bấm lặp.</div><div class="prompt-line">- Xung đột không tự ghi đè.</div><div class="prompt-line">- Không cam kết mã hóa hoặc an toàn tuyệt đối nếu chưa có bằng chứng.</div><div class="prompt-line">​</div><div class="prompt-line">==================================================</div><div class="prompt-line">5. NHỮNG ĐIỂM CẦN KIỂM TRA KỸ TRONG V1</div><div class="prompt-line">==================================================</div><div class="prompt-line">​</div><div class="prompt-line">Đây là câu hỏi kiểm tra, không phải kết luận lỗi:</div><div class="prompt-line">​</div><div class="prompt-line">- S02: Ngày/thứ đã đúng chưa? Người dùng có dễ tìm ngày hôm nay</div><div class="prompt-line">  khi ngày đó nằm ngoài vùng cuộn ngang đang thấy không?</div><div class="prompt-line">- S04: Bộ chọn meeting có giúp nhận biết ngày và lần học rõ ràng?</div><div class="prompt-line">  Chữ có bị cắt trong card meeting không?</div><div class="prompt-line">- S05: Trạng thái được sửa có nhất quán với dữ liệu lớp không?</div><div class="prompt-line">  Nếu S04 đang mở và S05 vẫn được sửa, đây là hai kịch bản khác nhau</div><div class="prompt-line">  đã khai báo, hay mâu thuẫn trong cùng một kịch bản?</div><div class="prompt-line">- S07: Hai dòng lịch sử có bị trùng cùng meeting không?</div><div class="prompt-line">  Note/audit từng thấy ở V0 còn truy cập được hay bị mất dấu hiệu?</div><div class="prompt-line">- S07/S08: Tổng P/A, số lần học đã diễn ra và danh sách hiển thị</div><div class="prompt-line">  có nhất quán? Nếu chỉ hiển thị một phần, có giải thích rõ không?</div><div class="prompt-line">- S08: Slot đang mở đã chặn xuất rõ ràng chưa?</div></main><footer><span>Nguồn: 08-v1-critique-prompt.md</span><span class="page-number">Trang 3/5</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Yêu cầu phản biện V1</h1><p>Người dùng → Codex · Nội dung từ tệp dán</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><div class="prompt-line">- S09: Công tắc lưu local có khiến người dùng nghĩ có thể tắt</div><div class="prompt-line">  bản lưu mặc định? Thư mục Drive có nhất quán với S10 không?</div><div class="prompt-line">- S10: “Đang đồng bộ”, “chờ đồng bộ” và lần thành công gần nhất</div><div class="prompt-line">  có dễ phân biệt? Lỗi/xung đột có hành động xử lý cụ thể không?</div><div class="prompt-line">- Toàn bộ: Các nhãn S07/S08/S10 có đang lộ mã thiết kế nội bộ</div><div class="prompt-line">  không cần thiết trong giao diện dành cho giảng viên không?</div><div class="prompt-line">​</div><div class="prompt-line">==================================================</div><div class="prompt-line">6. KIỂM TRA BA LUỒNG</div><div class="prompt-line">==================================================</div><div class="prompt-line">​</div><div class="prompt-line">F1 — Chuẩn bị lớp:</div><div class="prompt-line">S01 → S03 → S02 → S04 → S05 → S04.</div><div class="prompt-line">Có import lỗi/chọn lại, hủy và lịch bị khóa.</div><div class="prompt-line">​</div><div class="prompt-line">F2 — Điểm danh:</div><div class="prompt-line">S02 → S04 → S06 → xác nhận chốt → S04.</div><div class="prompt-line">Có hủy chốt, lỗi QR/thử lại và Back.</div><div class="prompt-line">Do thiếu S06 V1, ghi rõ phần nào chưa đánh giá được.</div><div class="prompt-line">​</div><div class="prompt-line">F3 — Kiểm tra và xuất:</div><div class="prompt-line">S02 → S04 → S08 → S07 → S08 → S09 → S10 nếu cần.</div><div class="prompt-line">Có lý do trống, hủy sửa, lỗi xuất và offline/retry.</div><div class="prompt-line">​</div><div class="prompt-line">Ảnh có nút không chứng minh nút hoạt động.</div><div class="prompt-line">Không khẳng định prototype đã nối đủ luồng chỉ từ ảnh tĩnh.</div><div class="prompt-line">​</div><div class="prompt-line">==================================================</div><div class="prompt-line">7. ĐỊNH DẠNG KẾT QUẢ</div><div class="prompt-line">==================================================</div><div class="prompt-line">​</div><div class="prompt-line">A. Nhận xét tổng quan:</div><div class="prompt-line">- Những điểm V1 nên giữ.</div><div class="prompt-line">- Những rủi ro chính.</div><div class="prompt-line">- Giới hạn của đánh giá ảnh tĩnh.</div><div class="prompt-line">​</div><div class="prompt-line">B. Bảng đối chiếu V0 → V1, nếu có đủ bằng chứng:</div><div class="prompt-line">- Vấn đề V0.</div><div class="prompt-line">- Màn hình.</div><div class="prompt-line">- Trạng thái: Đã sửa / Sửa một phần / Chưa sửa / Chưa xác minh.</div><div class="prompt-line">- Bằng chứng V1 và phần còn lại.</div><div class="prompt-line">​</div><div class="prompt-line">C. Ít nhất 5 phát hiện cụ thể, bao phủ ít nhất 5 màn hình.</div><div class="prompt-line">Không viết chung chung “cần đẹp hơn”.</div><div class="prompt-line">​</div><div class="prompt-line">Mỗi phát hiện phải có:</div><div class="prompt-line">1. ID màn hình và thành phần.</div><div class="prompt-line">2. Bằng chứng nhìn thấy.</div><div class="prompt-line">3. Tác động đến giảng viên và tác vụ.</div><div class="prompt-line">4. Nguyên tắc Nielsen hoặc tiêu chí accessibility liên quan.</div><div class="prompt-line">5. Ưu tiên P1/P2/P3 và lý do.</div></main><footer><span>Nguồn: 08-v1-critique-prompt.md</span><span class="page-number">Trang 4/5</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Yêu cầu phản biện V1</h1><p>Người dùng → Codex · Nội dung từ tệp dán</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><div class="prompt-line">6. Đề xuất sửa cụ thể.</div><div class="prompt-line">7. Cách kiểm tra sau sửa.</div><div class="prompt-line">​</div><div class="prompt-line">Phân loại rõ:</div><div class="prompt-line">- Quan sát được.</div><div class="prompt-line">- Giả thuyết cần kiểm thử.</div><div class="prompt-line">- Thiếu bằng chứng.</div><div class="prompt-line">​</div><div class="prompt-line">D. Đánh giá ba luồng:</div><div class="prompt-line">Nêu phần đã thể hiện, nguy cơ ngõ cụt và nhánh còn thiếu bằng chứng.</div><div class="prompt-line">​</div><div class="prompt-line">E. Đề xuất mục tiêu vòng V2:</div><div class="prompt-line">- Chọn nhóm vấn đề quan trọng nhất.</div><div class="prompt-line">- Nêu màn hình cần tác động và tiêu chí hoàn thành.</div><div class="prompt-line">- Không tự sửa UI.</div><div class="prompt-line">- Không tự ghi quyết định Accept/Modify/Reject thay sinh viên.</div><div class="prompt-line">- Không tính lượt phản biện này là một vòng cải tiến đã hoàn thành.</div></main><footer><span>Nguồn: 08-v1-critique-prompt.md</span><span class="page-number">Trang 5/5</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Phản biện V1 · 9 phát hiện</h1><p>Codex → Người dùng · 9 ảnh V1; thiếu S06 V1; chưa kiểm thử</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><section><h2>A. Nhận xét tổng quan</h2><p>V1 đã tiến bộ so với V0, nhưng còn hai nhóm cần ưu tiên: <strong>tính nhất quán của dữ liệu meeting</strong> và <strong>khả năng xem lịch sử, ghi chú chỉnh sửa</strong>.</p></section><p>Đánh giá này dựa trên <strong>9 ảnh V1</strong>, ảnh V0 đối chiếu và ba tài liệu <code>persona.md</code>, <code>DESIGN.md</code>, <code>user-flow.md</code>. <strong>Chưa có S06 V1</strong>, nên chưa thể kết luận luồng QR đã hoàn thiện.</p><section><h3>Những điểm nên giữ</h3><ul>
+<li>Trắng–cam nhất quán, hành động chính dễ phân biệt với hành động phụ.</li>
+<li>S01 nói rõ email chỉ nhận diện workspace, không phải xác thực tài khoản.</li>
+<li>S03 giải thích import cập nhật dữ liệu và giữ lịch sử.</li>
+<li>S04 đã hiển thị môn/lớp, phân biệt “Lần học 5/20” với “Slot 2”.</li>
+<li>S07 giải thích đúng mẫu số tỷ lệ vắng: toàn bộ meeting đã lên lịch.</li>
+<li>S08 thể hiện rõ meeting đang mở chưa được xuất.</li>
+<li>S09 phân biệt CSV trao đổi dữ liệu với JSON cho Extension.</li>
+<li>Trạng thái P/A có chữ và ký hiệu, không chỉ dựa vào màu.</li>
+</ul></section><section><h3>Rủi ro chính</h3><ol>
+<li>Cùng lớp PRN232–SE1920 nhưng lịch và trạng thái giữa các màn chưa thể hiện một bộ dữ liệu thống nhất.</li>
+<li>S07 có hai dòng lịch sử giống nhau và mất dấu hiệu truy cập note từng thấy ở V0.</li>
+<li>Ngày hôm nay chưa nằm trong vùng thời khóa biểu đang hiển thị.</li>
+<li>Trạng thái lưu local, nơi lưu Drive và tiến trình đồng bộ còn gây hiểu khác nhau.</li>
+</ol></section><section><h3>Giới hạn đánh giá</h3><p>Ảnh tĩnh không chứng minh nút hoạt động, dữ liệu được lưu hoặc prototype đã nối đủ luồng. Chưa thể xác nhận tương phản, kích thước chữ, vùng chạm, screen reader hay hành vi khi bàn phím mở.</p></section><p>Các nguyên tắc H1–H10 dưới đây theo <a href="https://www.nngroup.com/articles/ten-usability-heuristics/">Nielsen</a>. Không cố gán vấn đề cho đủ cả 10 nguyên tắc.</p><p>Một điểm tài liệu cần thống nhất: <code>DESIGN.md</code> mô tả cảnh báo <strong>sau import</strong>, còn S03 có bước xem trước <strong>trước khi xác nhận</strong>. Đây có thể là cải tiến UX hợp lý, nhưng cần ghi nhận là thay đổi thiết kế, không coi là chức năng source đã có.</p><hr><section><h2>B. Đối chiếu V0 → V1</h2><p>“Đã sửa” trong bảng chỉ xác nhận <strong>biểu hiện trên ảnh</strong>, không xác nhận hành vi đã được triển khai.</p></section></main><footer><span>Nguồn: 08-v1-critique-response.md</span><span class="page-number">Trang 1/7</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Phản biện V1 · 9 phát hiện</h1><p>Codex → Người dùng · 9 ảnh V1; thiếu S06 V1; chưa kiểm thử</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><table>
+<thead>
+<tr>
+<th>Vấn đề V0</th>
+<th>Màn hình</th>
+<th>Trạng thái</th>
+<th>Bằng chứng V1 và phần còn lại</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Khu vực DEV/QA và thông báo lỗi thử nghiệm xuất hiện trong UI</td>
+<td>S01</td>
+<td>Đã sửa</td>
+<td>Không còn khu vực thử lỗi; email được giải thích đúng vai trò.</td>
+</tr>
+<tr>
+<td>Ngày/thứ và khoảng tuần không nhất quán</td>
+<td>S02</td>
+<td>Đã sửa</td>
+<td>Tuần 21–27/09/2026, thứ Ba 22/09 và thứ Tư 23/09 đúng. Khả năng tìm hôm nay cần thử.</td>
+</tr>
+<tr>
+<td>Tiêu đề màn hình chưa đúng tác vụ</td>
+<td>S03, S05</td>
+<td>Đã sửa</td>
+<td>Đã dùng “Import markbook”, “Cấu hình lịch lớp”.</td>
+</tr>
+<tr>
+<td>Thiếu ngữ cảnh lớp, dễ nhầm slot với lần học</td>
+<td>S04</td>
+<td>Sửa một phần</td>
+<td>Đã có PRN232–SE1920 và lần học; card kế tiếp vẫn bị cắt.</td>
+</tr>
+<tr>
+<td>Điều kiện khóa lịch khó hiểu</td>
+<td>S05</td>
+<td>Sửa một phần</td>
+<td>Câu điều kiện đã rõ; trạng thái được sửa cần đối chiếu bộ dữ liệu demo.</td>
+</tr>
+<tr>
+<td>Giờ học, thông tin ngoài nguồn và lịch sử cá nhân chưa phù hợp</td>
+<td>S07</td>
+<td>Sửa một phần</td>
+<td>Đã bỏ thông tin phòng/ngưỡng vắng; xuất hiện lịch sử trùng và thiếu dấu hiệu note.</td>
+</tr>
+<tr>
+<td>Tiến độ sai mẫu số, xuất meeting đang mở chưa rõ</td>
+<td>S08</td>
+<td>Đã sửa</td>
+<td>Đã hiển thị 4/20 và “Chưa thể xuất — Cần chốt”.</td>
+</tr>
+<tr>
+<td>CSV bị mô tả như import trực tiếp vào FAP</td>
+<td>S09</td>
+<td>Đã sửa</td>
+<td>Đã đổi thành CSV trao đổi dữ liệu, JSON cho Extension.</td>
+</tr>
+<tr>
+<td>Công tắc local và thư mục lưu chưa rõ</td>
+<td>S09</td>
+<td>Chưa sửa</td>
+<td>Vẫn có công tắc local; thư mục Drive chưa khớp cách trình bày ở S10.</td>
+</tr>
+<tr>
+<td>Cam kết bảo mật và xử lý conflict chưa có cơ sở</td>
+<td>S10</td>
+<td>Sửa một phần</td>
+<td>Đã bỏ cam kết mã hóa; chính sách conflict rõ hơn nhưng chưa có trạng thái xử lý thực tế.</td>
+</tr>
+<tr>
+<td>Màn QR và các nhánh chốt/lỗi</td>
+<td>S06</td>
+<td>Chưa xác minh</td>
+<td>Chưa có ảnh S06 V1.</td>
+</tr>
+</tbody></table><hr><section><h2>C. Các phát hiện cụ thể</h2><p>Quy ước ưu tiên:</p></section><ul>
+<li><strong>P1:</strong> Có thể gây hiểu sai kết quả, meeting hoặc mất khả năng truy vết.</li>
+<li><strong>P2:</strong> Cản trở tác vụ hoặc gây nhầm trạng thái.</li>
+<li><strong>P3:</strong> Vấn đề nội dung, tính nhất quán ít ảnh hưởng hơn.</li>
+</ul></main><footer><span>Nguồn: 08-v1-critique-response.md</span><span class="page-number">Trang 2/7</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Phản biện V1 · 9 phát hiện</h1><p>Codex → Người dùng · 9 ảnh V1; thiếu S06 V1; chưa kiểm thử</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><section><h3>UX-01 — Lịch và quyền sửa của cùng lớp chưa có ngữ cảnh nhất quán</h3><ol>
+<li><strong>Màn hình/thành phần:</strong> S04, S05, S08 — lớp PRN232–SE1920.</li>
+<li><strong>Bằng chứng:</strong> S04 đang mở lần học 5 ngày thứ Năm 24/09. S08 có meeting đã chốt ngày 17, 19 và 22/09. S05 lại chọn bắt đầu 21/09, nhóm thứ Tư/thứ Bảy và hiển thị “Được phép chỉnh sửa”.</li>
+<li><strong>Tác động:</strong> Nếu đây là cùng trạng thái dữ liệu, giảng viên sẽ hiểu sai lịch lớp và điều kiện được đổi lịch.</li>
+<li><strong>Nguyên tắc:</strong> H4 — nhất quán; H5 — phòng ngừa sai sót.</li>
+<li><strong>Ưu tiên:</strong> <strong>P1 nếu cùng kịch bản.</strong> Hiện là <strong>thiếu bằng chứng về ngữ cảnh</strong>, chưa đủ để kết luận hệ thống cho sửa sai. <code>user-flow.md</code> đã yêu cầu ba bộ dữ liệu demo độc lập.</li>
+<li><strong>Đề xuất:</strong> Khai báo rõ dữ liệu F1/F2/F3 trong trang mô tả prototype. F1 dùng lớp chưa active/closed; F2 và F3 dùng trạng thái phù hợp. Trong mỗi flow, thống nhất ngày bắt đầu, nhóm ngày, thứ tự meeting và trạng thái khóa.</li>
+<li><strong>Kiểm tra:</strong> Theo từng starting point, đối chiếu toàn bộ class ID/meeting ID. Với lớp đã active/closed, S05 phải giải thích và chặn lưu.</li>
+</ol></section><section><h3>UX-02 — Lịch sử sinh viên bị trùng và số lượng không rõ</h3><ol>
+<li><strong>Màn hình/thành phần:</strong> S07 — danh sách lịch sử.</li>
+<li><strong>Bằng chứng:</strong> Hai dòng đều là “Lần học 4 (22/09/2026)”, Slot 2, trạng thái P. Phía trên thống kê 4 P + 1 A nhưng tiêu đề danh sách ghi “2 buổi đã điểm danh”.</li>
+<li><strong>Tác động:</strong> Giảng viên không biết đây là bản ghi trùng, danh sách rút gọn hay số liệu sai; có nguy cơ chọn nhầm meeting khi sửa.</li>
+<li><strong>Nguyên tắc:</strong> H1 — trạng thái rõ ràng; H4 — nhất quán; H5 — phòng ngừa sai sót.</li>
+<li><strong>Ưu tiên:</strong> <strong>P1</strong>, vì ảnh hưởng trực tiếp việc kiểm tra lịch sử.</li>
+<li><strong>Đề xuất:</strong> Mỗi dòng đại diện một meeting duy nhất. Nếu chỉ hiển thị hai bản ghi, ghi “Đang hiển thị 2/5 lần học đã ghi nhận” và có “Xem tất cả”; nếu hiển thị toàn bộ, tổng danh sách phải khớp thống kê.</li>
+<li><strong>Kiểm tra:</strong> Dùng dữ liệu 4 P, 1 A trên năm meeting khác nhau; kiểm tra không trùng ID, ngày và tổng.</li>
+</ol></section><p><strong>Phân loại:</strong> Lịch sử trùng và nhãn số lượng là <strong>quan sát được</strong>; nguyên nhân dữ liệu hay thiết kế chưa xác định.</p><section><h3>UX-03 — Ghi chú chỉnh sửa mất dấu hiệu truy cập ở S07</h3><ol>
+<li><strong>Màn hình/thành phần:</strong> S07 — note/audit; liên quan icon note tại S04.</li>
+<li><strong>Bằng chứng:</strong> V0 từng hiển thị note và audit của sinh viên này. V1 chỉ thấy các dòng lịch sử cùng icon bút; S04 vẫn có icon note cạnh SE180123.</li>
+<li><strong>Tác động:</strong> Giảng viên khó tìm lý do sửa, đặc biệt khi xem lại sau ngày học.</li>
+<li><strong>Nguyên tắc:</strong> H6 — nhận biết thay vì ghi nhớ; H1 — trạng thái; yêu cầu label rõ cho icon tương tác.</li>
+<li><strong>Ưu tiên:</strong> <strong>P1</strong>, vì truy vết chỉnh sửa là yêu cầu nghiệp vụ chính.</li>
+<li><strong>Đề xuất:</strong> Tại đúng meeting có chỉnh sửa, thêm icon kèm nhãn “Có ghi chú”. Bấm mở note gồm lý do, thời điểm, người sửa và trạng thái trước → sau. Tách hành động xem note khỏi sửa P/A.</li>
+<li><strong>Kiểm tra:</strong> Mở bản ghi đã sửa từ ngày trước; xem note mà không phải vào chế độ sửa. Đóng/mở lại vẫn truy cập được thông tin.</li>
+</ol></section><p><strong>Phân loại:</strong> Thiếu dấu hiệu trong ảnh là <strong>quan sát được</strong>. Không kết luận note đã bị xóa khỏi dữ liệu.</p></main><footer><span>Nguồn: 08-v1-critique-response.md</span><span class="page-number">Trang 3/7</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Phản biện V1 · 9 phát hiện</h1><p>Codex → Người dùng · 9 ảnh V1; thiếu S06 V1; chưa kiểm thử</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><section><h3>UX-04 — Ngày hôm nay nằm ngoài vùng lịch đang thấy</h3><ol>
+<li><strong>Màn hình/thành phần:</strong> S02 — thời khóa biểu cuộn ngang.</li>
+<li><strong>Bằng chứng:</strong> Ảnh hiển thị thứ Ba 22/09 và thứ Tư 23/09, trong khi ngày demo hôm nay là thứ Năm 24/09. Có nút “Hôm nay” nhưng chưa thấy cột tương ứng.</li>
+<li><strong>Tác động:</strong> Giảng viên cần thao tác nhanh trước giờ học nhưng phải tìm ngày hiện tại trước.</li>
+<li><strong>Nguyên tắc:</strong> H6 — nhận biết; H7 — hiệu quả thao tác.</li>
+<li><strong>Ưu tiên:</strong> <strong>P2</strong>, vì ảnh hưởng tác vụ thường xuyên nhất.</li>
+<li><strong>Đề xuất:</strong> Khi vào dashboard hoặc bấm “Hôm nay”, đưa cả tuần và cột hôm nay vào vùng nhìn. Có nhãn “Hôm nay” tại cột ngày; có thể bổ sung lối tắt “Lớp đang diễn ra”.</li>
+<li><strong>Kiểm tra:</strong> Mở từ tuần khác và vị trí cuộn khác; bấm “Hôm nay” một lần phải thấy đúng ngày. Thử tìm và mở đúng lớp trong mục tiêu thời gian do nhóm đặt.</li>
+</ol></section><p><strong>Phân loại:</strong> Cột hôm nay không nằm trong ảnh là <strong>quan sát được</strong>. Việc nút không tự cuộn là <strong>giả thuyết cần thử trên prototype</strong>.</p><section><h3>UX-05 — Thông tin meeting bị cắt đúng nơi cần xác nhận</h3><ol>
+<li><strong>Màn hình/thành phần:</strong> S04 — card chọn meeting; S07 — dòng ngày/giờ lịch sử.</li>
+<li><strong>Bằng chứng:</strong> Card “Lần 6” chỉ hiện một phần. Giờ ở S07 kết thúc bằng dấu ba chấm.</li>
+<li><strong>Tác động:</strong> Giảng viên khó phân biệt các lần học, nhất là khi có học bù hoặc đổi lịch.</li>
+<li><strong>Nguyên tắc:</strong> H6 — nhận biết; accessibility về nội dung không bị cắt.</li>
+<li><strong>Ưu tiên:</strong> <strong>P2</strong>, vì ngữ cảnh thời gian giúp tránh sửa nhầm.</li>
+<li><strong>Đề xuất:</strong> Cho card đủ chiều rộng hoặc mở bộ chọn dạng danh sách. Tách dòng “Lần học”, ngày và giờ; tăng chiều cao thay vì giảm chữ. Nếu cố ý lộ card kế tiếp để báo cuộn, card đang chọn vẫn phải đầy đủ.</li>
+<li><strong>Kiểm tra:</strong> Frame rộng 360/412, tên lớp dài và chữ phóng lớn; toàn bộ ngày/giờ của lựa chọn hiện tại phải đọc được.</li>
+</ol></section><p><strong>Phân loại:</strong> Nội dung bị cắt là <strong>quan sát được</strong>; chưa xác định kích thước chữ thực tế.</p><section><h3>UX-06 — Công tắc lưu local mâu thuẫn với cách diễn đạt mặc định</h3><ol>
+<li><strong>Màn hình/thành phần:</strong> S09 — “Lưu trên bộ nhớ máy”.</li>
+<li><strong>Bằng chứng:</strong> Có công tắc đang bật, nhãn “Mặc định” và nút “Xuất tệp ngay — Lưu trên máy”.</li>
+<li><strong>Tác động:</strong> Giảng viên có thể hiểu rằng tắt công tắc sẽ không còn bản local, trái với cách sản phẩm giải thích local-first.</li>
+<li><strong>Nguyên tắc:</strong> H3 — kiểm soát; H4 — nhất quán; H5 — phòng ngừa nhầm lẫn.</li>
+<li><strong>Ưu tiên:</strong> <strong>P2</strong>, vì liên quan kỳ vọng lưu dữ liệu.</li>
+<li><strong>Đề xuất:</strong> Nếu bản xuất luôn lưu local, thay công tắc bằng thông tin chỉ đọc: “Luôn lưu trên thiết bị”, kèm nơi lưu. Giữ lựa chọn “Sao lưu thêm lên Drive” là tùy chọn.</li>
+<li><strong>Kiểm tra:</strong> Hỏi người thử “Nếu không chọn Drive, file ở đâu?”; câu trả lời phải thống nhất. Thử xuất khi offline và xác nhận chỉ báo thành công sau khi lưu được.</li>
+</ol></section><p><strong>Phân loại:</strong> Công tắc là <strong>quan sát được</strong>; hành vi sau khi tắt chưa có bằng chứng.</p></main><footer><span>Nguồn: 08-v1-critique-response.md</span><span class="page-number">Trang 4/7</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Phản biện V1 · 9 phát hiện</h1><p>Codex → Người dùng · 9 ảnh V1; thiếu S06 V1; chưa kiểm thử</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><section><h3>UX-07 — Nơi lưu Drive chưa thống nhất giữa hai màn</h3><ol>
+<li><strong>Màn hình/thành phần:</strong> S09, S10 — đường dẫn lưu trữ.</li>
+<li><strong>Bằng chứng:</strong> S09 ghi thư mục <code>Attendance_2026</code>; S10 hiển thị <code>FAP_Attendance &gt; FA26 &gt; PRN232</code>.</li>
+<li><strong>Tác động:</strong> Giảng viên khó tìm file vừa xuất hoặc xác nhận đang sao lưu vào đúng workspace.</li>
+<li><strong>Nguyên tắc:</strong> H4 — nhất quán; H6 — nhận biết thay vì nhớ.</li>
+<li><strong>Ưu tiên:</strong> <strong>P2</strong>, vì ảnh hưởng tìm lại và bàn giao dữ liệu.</li>
+<li><strong>Đề xuất:</strong> Hiển thị cùng một đích xuất. Nếu một đường dẫn là workspace, một đường dẫn là exports, phải ghi rõ vai trò. Thư mục lớp nên có cả môn và mã lớp để phân biệt các lớp cùng môn.</li>
+<li><strong>Kiểm tra:</strong> Xuất từ S09, sang S10 và đối chiếu tên file, lớp, đường dẫn. Người thử phải chỉ được vị trí file mà không cần hỏi lại.</li>
+</ol></section><p><strong>Phân loại:</strong> Hai tên thư mục khác nhau là <strong>quan sát được</strong>; chưa rõ có chủ ý dùng hai đích khác nhau hay không.</p><section><h3>UX-08 — Trạng thái đồng bộ và đường xử lý lỗi chưa đủ bằng chứng</h3><ol>
+<li><strong>Màn hình/thành phần:</strong> S10 — tiến trình đồng bộ và conflict.</li>
+<li><strong>Bằng chứng:</strong> Đồng thời có “1 tệp chờ đồng bộ”, “Tệp đang chờ tải lên” và nút “Đang đồng bộ…”. Conflict mới có đoạn giải thích chính sách.</li>
+<li><strong>Tác động:</strong> Giảng viên khó biết tệp đang tải hay vẫn chờ; khi có xung đột chưa thấy nơi kiểm tra hoặc bước tiếp theo.</li>
+<li><strong>Nguyên tắc:</strong> H1 — trạng thái; H9 — phục hồi lỗi; H10 — hướng dẫn.</li>
+<li><strong>Ưu tiên:</strong> <strong>P2</strong>, đặc biệt với người dùng mạng không ổn định.</li>
+<li><strong>Đề xuất:</strong> Phân biệt trạng thái từng tệp: “Đang tải 1 tệp”, “Còn 0 tệp chờ”, “Lần thành công gần nhất…”. Thêm trạng thái offline/thử lại và conflict có hành động “Xem hướng dẫn kiểm tra”, không hứa tự merge.</li>
+<li><strong>Kiểm tra:</strong> Mô phỏng chờ → đang tải → thành công; offline → thử lại; conflict → xem hướng dẫn → quay lại. Bấm đồng bộ lặp không tạo lượt chạy mới.</li>
+</ol></section><p><strong>Phân loại:</strong> Các nhãn là <strong>quan sát được</strong>. Chờ và đang tải có thể cùng tồn tại, nên đây chưa phải lỗi logic chắc chắn. Khả năng ngăn bấm lặp và phục hồi lỗi còn <strong>thiếu bằng chứng</strong>.</p><section><h3>UX-09 — Mã màn hình nội bộ xuất hiện trong UI</h3><ol>
+<li><strong>Màn hình/thành phần:</strong> S04 và S09 — nhãn điều hướng.</li>
+<li><strong>Bằng chứng:</strong> Có “Lịch sử (S08)”, “MỞ ĐIỂM DANH QR (S06)”, mô tả đến “S07” và “Quản lý Google Drive (S10)”.</li>
+<li><strong>Tác động:</strong> Giảng viên phải đọc thông tin phục vụ thiết kế nhưng không giúp hoàn thành tác vụ.</li>
+<li><strong>Nguyên tắc:</strong> H2 — ngôn ngữ người dùng; H8 — tối giản.</li>
+<li><strong>Ưu tiên:</strong> <strong>P3</strong>, không chặn luồng nhưng làm giao diện kém tự nhiên.</li>
+<li><strong>Đề xuất:</strong> Bỏ mã khỏi UI; giữ trong tên frame và tài liệu. Dùng “Lịch sử”, “Mở QR điểm danh”, “Quản lý Google Drive”.</li>
+<li><strong>Kiểm tra:</strong> Rà toàn bộ màn hình và overlay; không còn mã Sxx trong nội dung dành cho giảng viên.</li>
+</ol></section><p><strong>Phân loại:</strong> <strong>Quan sát được.</strong></p></main><footer><span>Nguồn: 08-v1-critique-response.md</span><span class="page-number">Trang 5/7</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Phản biện V1 · 9 phát hiện</h1><p>Codex → Người dùng · 9 ảnh V1; thiếu S06 V1; chưa kiểm thử</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><section><h3>Accessibility: chưa thể đánh dấu đạt</h3><table>
+<thead>
+<tr>
+<th>Hạng mục</th>
+<th>Kết luận hiện tại</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Tương phản chữ</td>
+<td>Cần đo trong Figma, nhất là chữ phụ, chip nhạt và trạng thái disabled. Chữ thường cần tối thiểu 4,5:1 theo <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html">WCAG</a>.</td>
+</tr>
+<tr>
+<td>Font body 16, phụ ≥14</td>
+<td>Cần kiểm tra thông số frame; không suy từ ảnh thu nhỏ.</td>
+</tr>
+<tr>
+<td>Vùng chạm ≥48 × 48</td>
+<td>Cần đo, ưu tiên icon bút, note, mũi tên tuần, radio và nút tăng/giảm. Đây là mục tiêu của project.</td>
+</tr>
+<tr>
+<td>Không chỉ dùng màu</td>
+<td>P/A và một số trạng thái đã có chữ/ký hiệu; chưa xác nhận toàn bộ component.</td>
+</tr>
+<tr>
+<td>Label cho icon</td>
+<td>Có label nhìn thấy ở nhiều nơi; tên truy cập của icon cần kiểm tra theo yêu cầu <a href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html">labels/instructions</a>.</td>
+</tr>
+<tr>
+<td>Chữ lớn, bàn phím, cuộn</td>
+<td>Chưa có bằng chứng. Cần thử form S01/S03/S05 và overlay sửa điểm danh.</td>
+</tr>
+</tbody></table></section><hr><section><h2>D. Đánh giá ba luồng</h2><table>
+<thead>
+<tr>
+<th>Luồng</th>
+<th>Phần đã thể hiện</th>
+<th>Nguy cơ và bằng chứng còn thiếu</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>F1 — Chuẩn bị lớp</strong></td>
+<td>S01 có điểm vào; S03 có file/cấu hình/xác nhận; S02 có quản lý lớp; S05 có lưu và hủy.</td>
+<td>Chưa chứng minh nối S04 → S05, import lỗi/chọn lại, lỗi lưu và trạng thái lịch bị khóa. Cần khai báo bộ dữ liệu chưa active/closed để demo đổi lịch.</td>
+</tr>
+<tr>
+<td><strong>F2 — Điểm danh</strong></td>
+<td>S04 có đúng ngữ cảnh và nút QR; S08 có trạng thái đang mở.</td>
+<td>Thiếu S06 V1 nên chưa đánh giá QR 15 giây, mã bí mật cố định, challenge hai phút, lỗi/thử lại, hủy chốt và trở về đúng meeting. Back khỏi QR cũng chưa có bằng chứng.</td>
+</tr>
+<tr>
+<td><strong>F3 — Kiểm tra và xuất</strong></td>
+<td>S08 có lịch sử/xuất; S07 có sửa; S09 có định dạng; S10 có trạng thái đồng bộ.</td>
+<td>Chưa thấy đường S08 → danh sách sinh viên → S07. Note chưa rõ; thiếu overlay lý do trống/hủy, kết quả lưu, lỗi xuất, offline/retry và conflict thực tế.</td>
+</tr>
+</tbody></table></section><p><strong>Nguy cơ ngõ cụt đáng kiểm tra:</strong> S08 “Xem chi tiết” có đưa tới nơi chọn sinh viên không? S07 Back có giữ meeting nguồn không? Khi xuất/đồng bộ lỗi, người dùng có thể kết thúc bằng bản local hay bị mắc ở màn loading?</p><p>Đây là câu hỏi kiểm thử, chưa phải kết luận prototype đang lỗi.</p><hr><section><h2>E. Mục tiêu đề xuất cho V2</h2><p><strong>Mục tiêu:</strong> Giảng viên xác định đúng meeting, kiểm tra được lý do chỉnh sửa và hoàn tất tác vụ mà không nhầm trạng thái lưu.</p></section></main><footer><span>Nguồn: 08-v1-critique-response.md</span><span class="page-number">Trang 6/7</span></footer></article><article class="page"><header><div class="eyebrow">FAP ATTENDANCE · LAB 2 · SE193324 · LƯU NGÀY 11/10/2026</div><h1>Phản biện V1 · 9 phát hiện</h1><p>Codex → Người dùng · 9 ảnh V1; thiếu S06 V1; chưa kiểm thử</p><div class="disclosure">ẢNH CHỤP BẢN LƯU NỘI DUNG — KHÔNG PHẢI ẢNH CHAT GỐC. Không chứng minh đã gửi prompt hoặc đã kiểm thử giao diện.</div></header><main><table>
+<thead>
+<tr>
+<th>Nhóm ưu tiên</th>
+<th>Màn hình</th>
+<th>Tiêu chí hoàn thành</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Chuẩn hóa dữ liệu demo</td>
+<td>S02, S04, S05, S07, S08</td>
+<td>Khai báo F1/F2/F3 độc lập; mỗi flow nhất quán ngày, lịch, meeting, P/A và quyền sửa.</td>
+</tr>
+<tr>
+<td>Khôi phục truy vết</td>
+<td>S04, S07, S08</td>
+<td>Không trùng lịch sử; số lượng rõ; note xem được sau ngày học; sửa có lý do và hủy không đổi kết quả.</td>
+</tr>
+<tr>
+<td>Hoàn thiện luồng QR</td>
+<td>S06 và kết quả S04</td>
+<td>Có V1/V2 đầy đủ; QR/mã bí mật/hai phút đúng quy tắc; có hủy chốt, lỗi/thử lại và Back; chốt thành công về đúng lớp.</td>
+</tr>
+<tr>
+<td>Làm rõ lưu và đồng bộ</td>
+<td>S09, S10</td>
+<td>Local mặc định không gây hiểu nhầm; đích Drive thống nhất; có success/offline/retry/conflict và ngăn thao tác lặp.</td>
+</tr>
+<tr>
+<td>Kiểm chứng mobile</td>
+<td>Các màn bị tác động</td>
+<td>Đo tương phản/font/vùng chạm; thử 360/412, chữ lớn, tên dài và bàn phím; lưu bằng chứng thực tế.</td>
+</tr>
+</tbody></table><p>Nên xử lý UX-01, UX-02 và UX-03 trước, rồi bổ sung S06 và các nhánh lỗi. Chưa cần đổi phong cách màu sắc hoặc thiết kế lại toàn bộ.</p><p><strong>Lượt này chỉ là phản biện:</strong> chưa sửa UI, chưa ghi quyết định Accept/Modify/Reject và chưa được tính là một vòng cải tiến đã hoàn thành.</p></main><footer><span>Nguồn: 08-v1-critique-response.md</span><span class="page-number">Trang 7/7</span></footer></article></body></html>
